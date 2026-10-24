@@ -7,7 +7,11 @@ Fixed-point tanh/sigmoid activation hardware with adaptive iteration control, a 
 - `Phase2_ RTL/verification/`, `asic/`, `uvm_tb/`, `spi_tb/`: verification flows.
 - `Phase2_ RTL/fpga/`: firmware, build scripts, simulations, and PYNQ notebooks.
 - `Phase2_ RTL/evaluation/`: evaluation scripts, model/test data, and saved results.
-- 
+
+## System Architecture
+
+![CORDIC NPU System Architecture](SystemArchitecture.png)
+
 ## Python
 
 From the project root, to install NumPy and run the frozen banknote model:
