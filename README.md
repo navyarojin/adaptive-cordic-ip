@@ -7,22 +7,17 @@ Fixed-point tanh/sigmoid activation hardware with adaptive iteration control, a 
 - `Phase2_ RTL/verification/`, `asic/`, `uvm_tb/`, `spi_tb/`: verification flows.
 - `Phase2_ RTL/fpga/`: firmware, build scripts, simulations, and PYNQ notebooks.
 - `Phase2_ RTL/evaluation/`: evaluation scripts, model/test data, and saved results.
-- `arch.pptx`: architecture slides.
-
+- 
 ## Python
 
-From the project root, install NumPy and run the frozen banknote model:
+From the project root, to install NumPy and run the frozen banknote model:
 
 ```powershell
 python -m pip install numpy
 python "Phase1_Bitmodel/model.py" 3.6216 8.6661 -2.8073 -0.44699
 ```
 
-On Linux, use `python3` if `python` is unavailable. Open `Phase1_Bitmodel/cordic.ipynb` in Jupyter for the CORDIC model.
-
-## Verilog / Cadence
-
-Use a Linux machine with licensed Cadence Xcelium. Load your lab's Cadence environment so `xrun` is on `PATH`. Copy the complete project, then run from its root:
+## Verilog Simulation (in Cadence Xcelium)
 
 ```bash
 xrun -version
@@ -32,12 +27,10 @@ bash "Phase2_ RTL/asic/uvm.sh" 1
 
 The first script runs SPI/accelerator tests; the second runs the streaming UVM test with seed `1` and coverage. Logs are saved in `Phase2_ RTL/spi_tb/results/` and `Phase2_ RTL/asic/reports/xcelium_seed_1/`. Check for `PASS` and no errors.
 
-For an interactive accelerator simulation in SimVision:
+To view waveform in SimVision:
 
 ```bash
 cd "Phase2_ RTL"
 xrun -sv -f rtl/sources.f uvm_tb/tb/ref.sv verification/tb_accel.sv \
   -top tb_accelerator -timescale 1ns/1ps -access +rwc -gui
 ```
-
-Select signals in SimVision and run the simulation to view waveforms. These are SystemVerilog sources, so keep `-sv` enabled.
