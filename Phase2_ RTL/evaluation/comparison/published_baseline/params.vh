@@ -1,0 +1,20 @@
+`define num_bits 16
+`define num_bits_int_part 4
+`define num_bits_frac_part `num_bits - `num_bits_int_part
+`define xinf -22282
+`define xmin -13312
+`define xmed 0
+`define xmax 13312
+`define xsup 22282
+`define zero 0
+`define one 4096
+`define p2k1 58
+`define p2k0 314
+`define p3k2 165
+`define p3k1 1116
+`define p3k0 2057
+`define p4k2 -165
+`define p4k1 1116
+`define p4k0 2039
+`define p5k1 58
+`define p5k0 3782

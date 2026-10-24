@@ -1,0 +1,386 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Wed Oct 14 20:49:38 2026
+| Host         : navya-tkmce running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -file C:/Users/pc/Desktop/main-proj/.cleanup/controlled-resources-20261014/shared_timing.rpt
+| Design       : activation_stream_array
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (197)
+6. checking no_output_delay (412)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (197)
+--------------------------------
+ There are 197 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (412)
+---------------------------------
+ There are 412 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     21.505        0.000                      0                50908        0.219        0.000                      0                50908       19.020        0.000                       0                 22643  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)       Period(ns)      Frequency(MHz)
+-----  ------------       ----------      --------------
+clk    {0.000 20.000}     40.000          25.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk                21.505        0.000                      0                50908        0.219        0.000                      0                50908       19.020        0.000                       0                 22643  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk
+  To Clock:  clk
+
+Setup :            0  Failing Endpoints,  Worst Slack       21.505ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.219ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       19.020ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             21.505ns  (required time - arrival time)
+  Source:                 lanes[0].unit/early_pipe/reconstruct[2].double_angle/quotient_o_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            lanes[0].unit/successes_reg[0][0]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            40.000ns  (clk rise@40.000ns - clk rise@0.000ns)
+  Data Path Delay:        18.242ns  (logic 8.790ns (48.186%)  route 9.452ns (51.814%))
+  Logic Levels:           29  (CARRY4=17 LUT1=1 LUT3=1 LUT5=6 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 40.924 - 40.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=22657, unset)        0.973     0.973    lanes[0].unit/early_pipe/reconstruct[2].double_angle/clk
+                         FDRE                                         r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/quotient_o_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.518     1.491 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/quotient_o_reg[31]/Q
+                         net (fo=30, unplaced)        1.053     2.544    lanes[0].unit/early_pipe/reconstruct[2].double_angle/div_value[3]_3[31]
+                         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.671     3.215 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_61/CO[3]
+                         net (fo=1, unplaced)         0.009     3.224    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_61_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.341 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_39/CO[3]
+                         net (fo=1, unplaced)         0.000     3.341    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_39_n_0
+                         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.281     3.622 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_20/CO[0]
+                         net (fo=50, unplaced)        0.552     4.174    lanes[0].unit/early_pipe/reconstruct[2].double_angle/sat161
+                         LUT5 (Prop_lut5_I2_O)        0.367     4.541 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[0]_INST_0_i_3/O
+                         net (fo=2, unplaced)         0.344     4.885    lanes[0].unit/early_pipe/reconstruct[2].double_angle/final_value[0]
+                         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550     5.435 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[2]_INST_0_i_4/CO[3]
+                         net (fo=1, unplaced)         0.009     5.444    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[2]_INST_0_i_4_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.561 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[6]_INST_0_i_4/CO[3]
+                         net (fo=1, unplaced)         0.000     5.561    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[6]_INST_0_i_4_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.678 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[10]_INST_0_i_4/CO[3]
+                         net (fo=1, unplaced)         0.000     5.678    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[10]_INST_0_i_4_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.795 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[14]_INST_0_i_4/CO[3]
+                         net (fo=1, unplaced)         0.000     5.795    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[14]_INST_0_i_4_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     6.132 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_19/O[1]
+                         net (fo=3, unplaced)         0.330     6.462    lanes[0].unit/early_pipe/reconstruct[2].double_angle/final_value1[17]
+                         LUT5 (Prop_lut5_I0_O)        0.306     6.768 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_107/O
+                         net (fo=2, unplaced)         0.460     7.228    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_107_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.124     7.352 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_73/O
+                         net (fo=1, unplaced)         0.639     7.991    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_73_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520     8.511 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_42/CO[3]
+                         net (fo=1, unplaced)         0.009     8.520    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_42_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.637 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_22/CO[3]
+                         net (fo=1, unplaced)         0.000     8.637    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_22_n_0
+                         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.281     8.918 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_8/CO[0]
+                         net (fo=16, unplaced)        0.365     9.283    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_8_n_3
+                         LUT6 (Prop_lut6_I1_O)        0.367     9.650 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[1]_INST_0_i_2/O
+                         net (fo=1, unplaced)         0.449    10.099    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[1]_INST_0_i_2_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.124    10.223 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[1]_INST_0_i_1/O
+                         net (fo=3, unplaced)         0.657    10.880    lanes[0].unit/early_pipe/reconstruct[2].double_angle/early_result[1]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    11.400 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q_reg[max_error][0]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009    11.409    lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q_reg[max_error][0]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331    11.740 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q_reg[max_error][7]_i_2/O[3]
+                         net (fo=4, unplaced)         0.642    12.382    lanes[0].unit/early_pipe/reconstruct[2].double_angle/failure4[7]
+                         LUT1 (Prop_lut1_I0_O)        0.307    12.689 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q[max_error][8]_i_4/O
+                         net (fo=1, unplaced)         0.000    12.689    lanes[0].unit/early_pipe/reconstruct[2].double_angle/p_0_in_1[7]
+                         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    13.069 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q_reg[max_error][8]_i_2/CO[3]
+                         net (fo=1, unplaced)         0.000    13.069    lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q_reg[max_error][8]_i_2_n_0
+                         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.256    13.325 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q_reg[max_error][12]_i_2/O[2]
+                         net (fo=3, unplaced)         0.470    13.795    lanes[0].unit/early_pipe/reconstruct[2].double_angle/failure2[11]
+                         LUT3 (Prop_lut3_I2_O)        0.301    14.096 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/status_q[max_error][11]_i_1/O
+                         net (fo=3, unplaced)         0.467    14.563    lanes[0].unit/early_pipe/reconstruct[2].double_angle/shared.reference_results_reg[0][15][10]
+                         LUT6 (Prop_lut6_I1_O)        0.124    14.687 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_13/O
+                         net (fo=1, unplaced)         0.639    15.326    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_13_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.520    15.846 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_3/CO[3]
+                         net (fo=1, unplaced)         0.000    15.846    lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_3_n_0
+                         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.281    16.127 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/results_o[15]_INST_0_i_1/CO[0]
+                         net (fo=31, unplaced)        0.381    16.508    lanes[0].unit/early_pipe/reconstruct[2].double_angle/failure0
+                         LUT5 (Prop_lut5_I3_O)        0.367    16.875 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_5/O
+                         net (fo=17, unplaced)        0.505    17.380    lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_5_n_0
+                         LUT6 (Prop_lut6_I3_O)        0.124    17.504 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_6/O
+                         net (fo=1, unplaced)         0.449    17.953    lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_6_n_0
+                         LUT5 (Prop_lut5_I0_O)        0.124    18.077 f  lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_3/O
+                         net (fo=8, unplaced)         0.487    18.564    lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_3_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.124    18.688 r  lanes[0].unit/early_pipe/reconstruct[2].double_angle/successes[0][15]_i_1/O
+                         net (fo=16, unplaced)        0.527    19.215    lanes[0].unit/early_pipe_n_69
+                         FDRE                                         r  lanes[0].unit/successes_reg[0][0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       40.000    40.000 r  
+                                                      0.000    40.000 r  clk (IN)
+                         net (fo=22657, unset)        0.924    40.924    lanes[0].unit/clk
+                         FDRE                                         r  lanes[0].unit/successes_reg[0][0]/C
+                         clock pessimism              0.000    40.924    
+                         clock uncertainty           -0.035    40.889    
+                         FDRE (Setup_fdre_C_CE)      -0.169    40.720    lanes[0].unit/successes_reg[0][0]
+  -------------------------------------------------------------------
+                         required time                         40.720    
+                         arrival time                         -19.215    
+  -------------------------------------------------------------------
+                         slack                                 21.505    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.219ns  (arrival time - required time)
+  Source:                 lanes[0].unit/early_pipe/pipe_q_reg[0][iterations][1]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Destination:            lanes[0].unit/early_pipe/range_reduce[2].pipe_q_reg[3][iterations][1]_srl3/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@20.000ns period=40.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.305ns  (logic 0.164ns (53.808%)  route 0.141ns (46.192%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=22657, unset)        0.410     0.410    lanes[0].unit/early_pipe/clk
+                         FDRE                                         r  lanes[0].unit/early_pipe/pipe_q_reg[0][iterations][1]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.164     0.574 r  lanes[0].unit/early_pipe/pipe_q_reg[0][iterations][1]/Q
+                         net (fo=1, unplaced)         0.141     0.715    lanes[0].unit/early_pipe/pipe_q_reg[0][iterations][1]
+                         SRL16E                                       r  lanes[0].unit/early_pipe/range_reduce[2].pipe_q_reg[3][iterations][1]_srl3/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=22657, unset)        0.432     0.432    lanes[0].unit/early_pipe/clk
+                         SRL16E                                       r  lanes[0].unit/early_pipe/range_reduce[2].pipe_q_reg[3][iterations][1]_srl3/CLK
+                         clock pessimism              0.000     0.432    
+                         SRL16E (Hold_srl16e_CLK_D)
+                                                      0.064     0.496    lanes[0].unit/early_pipe/range_reduce[2].pipe_q_reg[3][iterations][1]_srl3
+  -------------------------------------------------------------------
+                         required time                         -0.496    
+                         arrival time                           0.715    
+  -------------------------------------------------------------------
+                         slack                                  0.219    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk
+Waveform(ns):       { 0.000 20.000 }
+Period(ns):         40.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     FDRE/C      n/a            1.000         40.000      39.000               cfg_q_reg[activation_mode][0]/C
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.980         20.000      19.020               lanes[0].unit/early_pipe/range_reduce[2].pipe_q_reg[3][iterations][0]_srl4/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.980         20.000      19.020               lanes[0].unit/early_pipe/range_reduce[2].pipe_q_reg[3][iterations][0]_srl4/CLK
+
+
+

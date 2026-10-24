@@ -1,0 +1,142 @@
+[
+  {
+    "architecture": "shared",
+    "policy": "fixed14_s256",
+    "outputs_per_cycle": 3.708465368945225,
+    "mean_iterations": 14.0,
+    "mathematical_mae": 4.445150969009835e-05,
+    "mathematical_max": 0.00033353444840897306,
+    "max_fixed14_error_lsb": 0.0,
+    "beyond_8lsb": 0
+  },
+  {
+    "architecture": "shared",
+    "policy": "fixed14_s1",
+    "outputs_per_cycle": 0.7927230501257984,
+    "mean_iterations": 14.0,
+    "mathematical_mae": 4.445150969009835e-05,
+    "mathematical_max": 0.00033353444840897306,
+    "max_fixed14_error_lsb": 0.0,
+    "beyond_8lsb": 0
+  },
+  {
+    "architecture": "shared",
+    "policy": "adaptive_s1_e0",
+    "outputs_per_cycle": 0.7927230501257984,
+    "mean_iterations": 12.583516438802084,
+    "mathematical_mae": 4.445150969009835e-05,
+    "mathematical_max": 0.00033353444840897306,
+    "max_fixed14_error_lsb": 0.0,
+    "beyond_8lsb": 0
+  },
+  {
+    "architecture": "shared",
+    "policy": "adaptive_s32_e0",
+    "outputs_per_cycle": 3.272872552936476,
+    "mean_iterations": 11.719502766927084,
+    "mathematical_mae": 5.8121274576506424e-05,
+    "mathematical_max": 0.0012499082636060338,
+    "max_fixed14_error_lsb": 20.0,
+    "beyond_8lsb": 633
+  },
+  {
+    "architecture": "shared",
+    "policy": "adaptive_s32_e8",
+    "outputs_per_cycle": 3.272872552936476,
+    "mean_iterations": 10.850372314453125,
+    "mathematical_mae": 0.00010637039355205768,
+    "mathematical_max": 0.0018057940412995466,
+    "max_fixed14_error_lsb": 30.0,
+    "beyond_8lsb": 2618
+  },
+  {
+    "architecture": "shared",
+    "policy": "adaptive_s256_e8",
+    "outputs_per_cycle": 3.708465368945225,
+    "mean_iterations": 11.583109537760416,
+    "mathematical_mae": 6.331412885396333e-05,
+    "mathematical_max": 0.0012499082636060338,
+    "max_fixed14_error_lsb": 20.0,
+    "beyond_8lsb": 1077
+  },
+  {
+    "architecture": "shared",
+    "policy": "frozen_seed_s32_e8",
+    "outputs_per_cycle": 3.272872552936476,
+    "mean_iterations": 11.58343505859375,
+    "mathematical_mae": 6.311089941781613e-05,
+    "mathematical_max": 0.0012499082636060338,
+    "max_fixed14_error_lsb": 20.0,
+    "beyond_8lsb": 1052
+  },
+  {
+    "architecture": "independent",
+    "policy": "fixed14_s256",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 14.0,
+    "mathematical_mae": 4.445150969009835e-05,
+    "mathematical_max": 0.00033353444840897306,
+    "max_fixed14_error_lsb": 0.0,
+    "beyond_8lsb": 0
+  },
+  {
+    "architecture": "independent",
+    "policy": "fixed14_s1",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 14.0,
+    "mathematical_mae": 4.445150969009835e-05,
+    "mathematical_max": 0.00033353444840897306,
+    "max_fixed14_error_lsb": 0.0,
+    "beyond_8lsb": 0
+  },
+  {
+    "architecture": "independent",
+    "policy": "adaptive_s1_e0",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 12.626434326171875,
+    "mathematical_mae": 4.445150969009835e-05,
+    "mathematical_max": 0.00033353444840897306,
+    "max_fixed14_error_lsb": 0.0,
+    "beyond_8lsb": 0
+  },
+  {
+    "architecture": "independent",
+    "policy": "adaptive_s32_e0",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 11.71728515625,
+    "mathematical_mae": 5.816424328624991e-05,
+    "mathematical_max": 0.0012499082636060338,
+    "max_fixed14_error_lsb": 20.0,
+    "beyond_8lsb": 638
+  },
+  {
+    "architecture": "independent",
+    "policy": "adaptive_s32_e8",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 10.858662923177084,
+    "mathematical_mae": 0.00010589081013483539,
+    "mathematical_max": 0.0018057940412995466,
+    "max_fixed14_error_lsb": 30.0,
+    "beyond_8lsb": 2614
+  },
+  {
+    "architecture": "independent",
+    "policy": "adaptive_s256_e8",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 11.583109537760416,
+    "mathematical_mae": 6.331412885396333e-05,
+    "mathematical_max": 0.0012499082636060338,
+    "max_fixed14_error_lsb": 20.0,
+    "beyond_8lsb": 1077
+  },
+  {
+    "architecture": "independent",
+    "policy": "frozen_seed_s32_e8",
+    "outputs_per_cycle": 3.8262494161606724,
+    "mean_iterations": 11.58343505859375,
+    "mathematical_mae": 6.311089941781613e-05,
+    "mathematical_max": 0.0012499082636060338,
+    "max_fixed14_error_lsb": 20.0,
+    "beyond_8lsb": 1052
+  }
+]

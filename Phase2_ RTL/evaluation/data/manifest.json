@@ -1,0 +1,72 @@
+{
+  "vectors": 2048,
+  "lanes": 4,
+  "warmup_vectors": 256,
+  "policies": [
+    "fixed14_s256",
+    "fixed14_s1",
+    "adaptive_s1_e0",
+    "adaptive_s32_e0",
+    "adaptive_s32_e8",
+    "adaptive_s256_e8",
+    "frozen_seed_s32_e8"
+  ],
+  "workloads": [
+    {
+      "distribution": "full_range_uniform",
+      "seed": 7
+    },
+    {
+      "distribution": "full_range_uniform",
+      "seed": 23
+    },
+    {
+      "distribution": "central_gaussian",
+      "seed": 7
+    },
+    {
+      "distribution": "central_gaussian",
+      "seed": 23
+    },
+    {
+      "distribution": "distribution_shift",
+      "seed": 7
+    },
+    {
+      "distribution": "distribution_shift",
+      "seed": 23
+    }
+  ],
+  "clock_mhz": 25,
+  "device": "xc7z020clg400-1",
+  "numpy_version": "2.3.5",
+  "stimulus_sha256": "171df653d0719c05696af985aa89abf489a08aee6daf6cb7a71559a6ef820e6a",
+  "source_sha256": {
+    "rtl\\cordic_pkg.sv": "0b3cd945c95733283bb910149774eaeabcf9d88f6b223d7a6804e7b685d67ad5",
+    "rtl\\cordic_ashr.sv": "c58e8618442063579af11623eb829cac8664e1f93c1dc653c1ac39f094d9c970",
+    "rtl\\cordic_saturate.sv": "a26ee42008da9b70764b618d831cf4069d03721312c0483e0200871728b03228",
+    "rtl\\fx_mul_round.sv": "e9674ac322b24803a7ab241eb88aaa7088da250f750c653dfb777eb92e80daa5",
+    "rtl\\fx_signed_divider.sv": "ddee7ceaf8fb5100aa6963afb6a5b3ddf2819001742995d84bb7903bbf5fbbcd",
+    "rtl\\fx_signed_divider_stream.sv": "0dc9f133d549bec912a634911203efd1417b1a5144010e55811b411db4e6a930",
+    "rtl\\cordic_activation_stream.sv": "9411863c39826dec805811e2649900093dc361d4541e0db713b5472a0086e519",
+    "rtl\\cordic_atanh_rom.sv": "aab4d031fe600f7e409f2b51d22c532a1ed6b3cfb3ac15df58c6211cfdda7efa",
+    "rtl\\cordic_iter_seq_rom.sv": "fb0e733bea7a2225fe4ed82ec6a7cab7131665f1bf4487ca7af5b3600ab698a1",
+    "rtl\\iteration_lut.sv": "0a0a03d29d5ba8fdb641fafce405e9040a6566a230ccb1748651147c83825e30",
+    "rtl\\cordic_core.sv": "9a1de96ba3a3d28602d47018e90ec9a67bfda4e74be01254817e5b71ba440449",
+    "rtl\\qualification_ctrl.sv": "8bca0bf0abffd98c3dad05d04d9385fc986a647be454882634aaf41ac25fadaf",
+    "rtl\\qualification_stream.sv": "59b3b9c0f4c45b736610c9a880ca6f038175eeb30c008d28bbc9a4fc7bf6a67a",
+    "rtl\\csr_apb.sv": "8a27540b5bd42869238bb35bab8bdbabee47b966dc79919943228a957fae845f",
+    "rtl\\zero_aware_systolic_npu_param.sv": "c66be7a6b77015723a443fa8ac9552d608d4366772d7a6994324acf2648f84b4",
+    "rtl\\mac4_stream.sv": "0b0277a3fe095f3b0a352673518abbbbe722b26819cadbee1dc0b159895ea372",
+    "rtl\\zero_aware_systolic_npu.sv": "a7957dc8ba141b732358b3b8f19d23467cbff926a2c185cefe73fa1024811865",
+    "rtl\\activation_ip_top.sv": "9f9bac1bc0a038a975dd1a7cebaf8b6d1abbd33ddbe845c417f15d79c775e09f",
+    "rtl\\activation_stream_array.sv": "f69f7f5a641919a8f22bbfe97d595bc5f5dbe77db0fdc7437c5fa4936cea0ff1",
+    "rtl\\hardware_command_queue.sv": "ae603dc50624fb58b0502704517b01a2f1a126242227a557e68a852bdd22fc6c",
+    "rtl\\activation_ping_pong.sv": "edfee68a2377d3becfecee49227214d59c50b376b5c4f29df79899d4eeb07438",
+    "rtl\\stream_job_engine.sv": "2d92e5e89fd0c72a98144249648d8aad21884c56b0b822ba6d0b71c586bb077f",
+    "rtl\\accelerator_top.sv": "b76322d358d8bdf000dbcb0e044e313facc1176c49e79dd64cdd099af50735f1",
+    "rtl\\npu_spi_bridge.sv": "36f670bd4956935f1e77cbe2856728a4d64d59e07259a2f4408fdb86f41dac13",
+    "rtl\\npu_spi_top.sv": "95f139d2ead35d3241a78947c36c311aa84b402169686bb5d0e11c27e5df3063",
+    "rtl\\tb_controlled_eval.sv": "11bd893017c5937022156baf8549e73be9dcc0f6c4501ab13651712911c944f5"
+  }
+}

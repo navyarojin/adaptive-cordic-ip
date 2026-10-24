@@ -1,0 +1,1224 @@
+{
+  "accuracy_results": [
+    {
+      "mode": "0",
+      "iterations": "14",
+      "domain_absolute_limit": "1",
+      "samples": "513",
+      "mae": "0.0000732192",
+      "rmse": "0.0000913388",
+      "max_absolute_error": "0.0002741771"
+    },
+    {
+      "mode": "0",
+      "iterations": "14",
+      "domain_absolute_limit": "4",
+      "samples": "2049",
+      "mae": "0.0000404014",
+      "rmse": "0.0000582709",
+      "max_absolute_error": "0.0002741771"
+    },
+    {
+      "mode": "0",
+      "iterations": "16",
+      "domain_absolute_limit": "1",
+      "samples": "513",
+      "mae": "0.0000666076",
+      "rmse": "0.0000810308",
+      "max_absolute_error": "0.0002131419"
+    },
+    {
+      "mode": "0",
+      "iterations": "16",
+      "domain_absolute_limit": "4",
+      "samples": "2049",
+      "mae": "0.0000375667",
+      "rmse": "0.0000520290",
+      "max_absolute_error": "0.0002131419"
+    },
+    {
+      "mode": "1",
+      "iterations": "14",
+      "domain_absolute_limit": "1",
+      "samples": "513",
+      "mae": "0.0000497613",
+      "rmse": "0.0000619699",
+      "max_absolute_error": "0.0001880882"
+    },
+    {
+      "mode": "1",
+      "iterations": "14",
+      "domain_absolute_limit": "4",
+      "samples": "2049",
+      "mae": "0.0000405183",
+      "rmse": "0.0000510061",
+      "max_absolute_error": "0.0001880882"
+    },
+    {
+      "mode": "1",
+      "iterations": "16",
+      "domain_absolute_limit": "1",
+      "samples": "513",
+      "mae": "0.0000479780",
+      "rmse": "0.0000566370",
+      "max_absolute_error": "0.0001463998"
+    },
+    {
+      "mode": "1",
+      "iterations": "16",
+      "domain_absolute_limit": "4",
+      "samples": "2049",
+      "mae": "0.0000392655",
+      "rmse": "0.0000480499",
+      "max_absolute_error": "0.0001463998"
+    }
+  ],
+  "board_bundle_sha256": [
+    {
+      "file": "npu_jupyter.bit",
+      "Hash": "B206C3E90BBEEB85068139E57EA10174FA05BABA35759BDCD11E864108C2B8A2"
+    },
+    {
+      "file": "npu_jupyter.hwh",
+      "Hash": "BBE7E1A28AB61460C9C9A550A7B8638489C4BB787625877A6604AAE66BAF7B85"
+    },
+    {
+      "file": "npu_client.py",
+      "Hash": "4D30FD87EF26DC834E133C81A326AF6437854361BA99B3C8A14F546DEF258565"
+    },
+    {
+      "file": "stream_client.py",
+      "Hash": "4816E28D0614F05B96C52AF762564C80E288E148B696FAEF3C67B7C7937B89AA"
+    },
+    {
+      "file": "verify_streaming.ipynb",
+      "Hash": "B5C54D359CF664CAA3BF0F16E1464757040843FFC388FCDDD1FF0C36F46758AE"
+    }
+  ],
+  "compute_results": [
+    {
+      "mode": "tanh",
+      "divider_bits_per_cycle": "4",
+      "baseline_lanes": "1",
+      "parallel_lanes": "4",
+      "baseline_job_cycles": "216",
+      "parallel_job_cycles": "64",
+      "job_speedup": "3.375",
+      "baseline_activation_cycles": "204",
+      "parallel_activation_cycles": "51",
+      "activation_speedup": "4.0",
+      "clock_mhz": "25",
+      "baseline_firmware_cycles": "138984",
+      "parallel_firmware_cycles": "139037"
+    },
+    {
+      "mode": "sigmoid",
+      "divider_bits_per_cycle": "4",
+      "baseline_lanes": "1",
+      "parallel_lanes": "4",
+      "baseline_job_cycles": "216",
+      "parallel_job_cycles": "64",
+      "job_speedup": "3.375",
+      "baseline_activation_cycles": "204",
+      "parallel_activation_cycles": "51",
+      "activation_speedup": "4.0",
+      "clock_mhz": "25",
+      "baseline_firmware_cycles": "138984",
+      "parallel_firmware_cycles": "139037"
+    },
+    {
+      "mode": "relu",
+      "divider_bits_per_cycle": "4",
+      "baseline_lanes": "1",
+      "parallel_lanes": "4",
+      "baseline_job_cycles": "20",
+      "parallel_job_cycles": "15",
+      "job_speedup": "1.333333",
+      "baseline_activation_cycles": "8",
+      "parallel_activation_cycles": "2",
+      "activation_speedup": "4.0",
+      "clock_mhz": "25",
+      "baseline_firmware_cycles": "139037",
+      "parallel_firmware_cycles": "139037"
+    },
+    {
+      "mode": "linear",
+      "divider_bits_per_cycle": "4",
+      "baseline_lanes": "1",
+      "parallel_lanes": "4",
+      "baseline_job_cycles": "20",
+      "parallel_job_cycles": "15",
+      "job_speedup": "1.333333",
+      "baseline_activation_cycles": "8",
+      "parallel_activation_cycles": "2",
+      "activation_speedup": "4.0",
+      "clock_mhz": "25",
+      "baseline_firmware_cycles": "139037",
+      "parallel_firmware_cycles": "139037"
+    }
+  ],
+  "full_system_resources": [
+    {
+      "configuration": "build_streaming_axi",
+      "streaming_lanes": "1",
+      "device": "xc7z020clg400-1",
+      "clock_mhz": "25",
+      "lut": "27195",
+      "ff": "19139",
+      "dsp": "12",
+      "bram36_equivalent": "21.0",
+      "setup_slack_ns": "16.841",
+      "hold_slack_ns": "0.027",
+      "estimated_dynamic_w": "1.367",
+      "estimated_static_w": "0.142",
+      "estimated_ps7_w": "1.256",
+      "power_method": "Vivado vectorless estimate; includes Zynq PS; not board measurement",
+      "scope": "CV32 plus legacy NPU SPI mailbox streaming activation buffers and AXI DMA"
+    },
+    {
+      "configuration": "build_streaming_parallel",
+      "streaming_lanes": "4",
+      "device": "xc7z020clg400-1",
+      "clock_mhz": "25",
+      "lut": "43816",
+      "ff": "37381",
+      "dsp": "21",
+      "bram36_equivalent": "33.5",
+      "setup_slack_ns": "6.976",
+      "hold_slack_ns": "0.015",
+      "estimated_dynamic_w": "1.473",
+      "estimated_static_w": "0.146",
+      "estimated_ps7_w": "1.256",
+      "power_method": "Vivado vectorless estimate; includes Zynq PS; not board measurement",
+      "scope": "CV32 plus legacy NPU SPI mailbox streaming activation buffers and AXI DMA"
+    }
+  ],
+  "implementation_scope": [
+    {
+      "requirement": "streaming CORDIC",
+      "implemented_scope": "arithmetic pipeline with 93-cycle first-result latency and initiation interval 1",
+      "remaining_validation_or_work": "four-lane full system routed at 25 MHz; physical-board validation pending"
+    },
+    {
+      "requirement": "parallel activation",
+      "implemented_scope": "4 8 and 16 lanes tested with shared full-accuracy reference",
+      "remaining_validation_or_work": "four-lane main image routed; 8 and 16 lanes verified in simulation only"
+    },
+    {
+      "requirement": "adaptive qualification",
+      "implemented_scope": "per-lane budgets sampling fallback counters freeze and learning state tested",
+      "remaining_validation_or_work": "runtime learning-reset command not exposed by new streaming mailbox extension"
+    },
+    {
+      "requirement": "ping-pong storage",
+      "implemented_scope": "two BRAM input banks and two result banks with ownership",
+      "remaining_validation_or_work": "vendor DMA regression passed; physical-board validation pending"
+    },
+    {
+      "requirement": "command queue",
+      "implemented_scope": "queued descriptors and asynchronous CV32 submission",
+      "remaining_validation_or_work": "only two independently owned data banks"
+    },
+    {
+      "requirement": "AXI bursts",
+      "implemented_scope": "vendor CDMA connected to DDR and streaming BRAM",
+      "remaining_validation_or_work": "vendor regression passed with 32 read and 32 write bursts; physical board pending"
+    },
+    {
+      "requirement": "CV32 mailbox",
+      "implemented_scope": "legacy ABI retained with stream-submit release and status commands",
+      "remaining_validation_or_work": "physical-board streaming client validation pending"
+    },
+    {
+      "requirement": "configurable MAC",
+      "implemented_scope": "4x4 8x8 and 16x16 standalone correctness passes",
+      "remaining_validation_or_work": "bulk streaming path accepts activation vectors; wider MAC job integration incomplete"
+    },
+    {
+      "requirement": "ASIC configuration",
+      "implemented_scope": "default single activation lane and portable arithmetic RTL",
+      "remaining_validation_or_work": "ASIC technology mapping and physical design not performed"
+    },
+    {
+      "requirement": "published comparison",
+      "implemented_scope": "reproduced published sigmoid RTL on same device clock interface format and full input domain",
+      "remaining_validation_or_work": "CORDIC internal Q14 differs from baseline Q12; no state-of-the-art claim"
+    },
+    {
+      "requirement": "power",
+      "implemented_scope": "Vivado vectorless estimates for standalone comparison and full system",
+      "remaining_validation_or_work": "activity-based or measured power pending; full-system estimate includes PS7"
+    },
+    {
+      "requirement": "board deliverable",
+      "implemented_scope": "corrected four-lane 64-bit HP0 bitstream and matching HWH exported and vendor DMA regression passed",
+      "remaining_validation_or_work": "physical-board rerun pending; old 32-bit HP0 image failed alternating-word checks"
+    }
+  ],
+  "published_accuracy": [
+    {
+      "design": "Bosso2025",
+      "samples": "65536",
+      "input_format": "Q4.12",
+      "output_format": "Q4.12",
+      "min_input": "-8",
+      "max_input": "7.999755859375",
+      "clock_mhz": "25",
+      "latency_clocks": "2",
+      "ii": "1",
+      "mae": "0.001660438554",
+      "rmse": "0.001999775112",
+      "max_error": "0.006809309219"
+    },
+    {
+      "design": "CORDIC_Q14_internal",
+      "samples": "65536",
+      "input_format": "Q4.12",
+      "output_format": "Q4.12",
+      "min_input": "-8",
+      "max_input": "7.999755859375",
+      "clock_mhz": "25",
+      "latency_clocks": "95",
+      "ii": "1",
+      "mae": "0.000075859910",
+      "rmse": "0.000092444260",
+      "max_error": "0.000312260896"
+    }
+  ],
+  "published_resources": [
+    {
+      "design": "published_sigmoid_benchmark",
+      "device": "xc7z020clg400-1",
+      "clock_mhz": "25",
+      "lut": "64",
+      "ff": "34",
+      "dsp": "6",
+      "bram36_equivalent": "0.0",
+      "setup_slack_ns": "28.559",
+      "hold_slack_ns": "0.391",
+      "estimated_dynamic_w": "0.002",
+      "estimated_static_w": "0.103",
+      "power_method": "Vivado vectorless estimate; not board measurement",
+      "precision": "Q4.12 interface; CORDIC uses Q14 internally",
+      "scope": "one registered activation kernel; excludes CV32 and data movement"
+    },
+    {
+      "design": "cordic_sigmoid_benchmark",
+      "device": "xc7z020clg400-1",
+      "clock_mhz": "25",
+      "lut": "3599",
+      "ff": "3648",
+      "dsp": "3",
+      "bram36_equivalent": "0.0",
+      "setup_slack_ns": "28.316",
+      "hold_slack_ns": "0.064",
+      "estimated_dynamic_w": "0.032",
+      "estimated_static_w": "0.103",
+      "power_method": "Vivado vectorless estimate; not board measurement",
+      "precision": "Q4.12 interface; CORDIC uses Q14 internally",
+      "scope": "one registered activation kernel; excludes CV32 and data movement"
+    }
+  ],
+  "research_sources": [
+    {
+      "year": "2026",
+      "title": "Hardware-Efficient FPGA Implementation of Sigmoid Function Using Mixed-Radix Hyperbolic Rotation CORDIC",
+      "status": "arXiv author manuscript; reports acceptance at 2AI 2026",
+      "comparison_role": "Closest recent pipelined CORDIC sigmoid comparator",
+      "technology": "Virtex-7; 16-bit fixed point",
+      "notes": "Dedicated hardware per iteration. Restricted sigmoid input domain [-1;1]. Reports MAE 4.23e-4 and zero DSP. Resource figure 835 is inconsistently described as LUTs and slices; do not treat those units as interchangeable. Requires matched-domain and same-device resynthesis for a fair numerical comparison.",
+      "url": "https://arxiv.org/html/2604.23547v1"
+    },
+    {
+      "year": "2026",
+      "title": "A Systolic Array Architecture for Nonlinear Activation Functions and Softmax Computation using Chebyshev Polynomials",
+      "status": "arXiv author manuscript; reports acceptance at IEEE COINS 2026",
+      "comparison_role": "Recent non-CORDIC parallel activation alternative",
+      "technology": "FreePDK45 ASIC; signed 16-bit",
+      "notes": "Uses a 10-row polynomial array with 8 or 16 columns. Evaluates tanh and sigmoid across [-4;4]; supports softmax too. Useful algorithm and accuracy comparator. ASIC area and power cannot be compared directly with PYNQ FPGA LUTs or power.",
+      "url": "https://arxiv.org/html/2608.04734v1"
+    },
+    {
+      "year": "2025",
+      "title": "CORDIC Is All You Need",
+      "status": "arXiv preprint",
+      "comparison_role": "Whole-accelerator architectural context",
+      "technology": "FPGA and ASIC results",
+      "notes": "Combines CORDIC MAC and nonlinear functions in a reconfigurable systolic architecture. Workload and pruning differ from this four-output NPU. Do not transfer its reported system speedups to this design; separate MAC and activation results when discussing it.",
+      "url": "https://arxiv.org/html/2503.11685v1"
+    },
+    {
+      "year": "2025",
+      "title": "An Area-Efficient and Low-Error FPGA-Based Sigmoid Function Approximation",
+      "status": "Applied Sciences 15(21) 11551; published 29 October 2025",
+      "comparison_role": "Reproducible polynomial baseline",
+      "technology": "Multiple FPGA families; 16-bit with 12 fractional bits",
+      "notes": "Publishes VHDL and Octave source. Piecewise first/second-degree polynomial sigmoid; reported MAE 1.66e-3 over [-8;8]. Strong methodological baseline because implementations use consistent precision and targets. Our 14-fractional-bit results need requantization before a direct comparison.",
+      "url": "https://www.mdpi.com/2076-3417/15/21/11551"
+    },
+    {
+      "year": "2024",
+      "title": "EBACA: Efficient Bfloat16-based Activation Function Implementation Using Enhanced CORDIC Architecture",
+      "status": "IEEE conference publication",
+      "comparison_role": "Additional precision/architecture context",
+      "technology": "BF16 floating point",
+      "notes": "Presents serial/parallel/hybrid softmax architectures and tanh/sigmoid hardware. Useful evidence for area-throughput tradeoffs; BF16 and this project's fixed point have different accuracy and range, so they are not directly equivalent.",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10483512/"
+    }
+  ],
+  "resource_results": [
+    {
+      "lanes": "1",
+      "divider_bits_per_cycle": "4",
+      "target": "xc7z020clg400-1",
+      "scope": "accelerator_top out of context",
+      "clock_mhz": "25",
+      "synth_luts": "3712",
+      "routed_hierarchical_luts": "3639",
+      "flip_flops": "2193",
+      "dsp": "1",
+      "bram36": "0",
+      "setup_wns_ns": "20.500",
+      "hold_whs_ns": "0.098"
+    },
+    {
+      "lanes": "4",
+      "divider_bits_per_cycle": "4",
+      "target": "xc7z020clg400-1",
+      "scope": "accelerator_top out of context",
+      "clock_mhz": "25",
+      "synth_luts": "9069",
+      "routed_hierarchical_luts": "8891",
+      "flip_flops": "5117",
+      "dsp": "4",
+      "bram36": "0",
+      "setup_wns_ns": "22.954",
+      "hold_whs_ns": "0.122"
+    }
+  ],
+  "stream_firmware_latency": [
+    {
+      "path": "legacy SPI complete job",
+      "mode": "0",
+      "lanes": "1",
+      "cycles": "138927",
+      "clock_mhz": "25",
+      "microseconds": "5557.08"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "1",
+      "lanes": "1",
+      "cycles": "138927",
+      "clock_mhz": "25",
+      "microseconds": "5557.08"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "2",
+      "lanes": "1",
+      "cycles": "138980",
+      "clock_mhz": "25",
+      "microseconds": "5559.2"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "3",
+      "lanes": "1",
+      "cycles": "138980",
+      "clock_mhz": "25",
+      "microseconds": "5559.2"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "0",
+      "lanes": "4",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "0",
+      "lanes": "4",
+      "cycles": "248",
+      "clock_mhz": "25",
+      "microseconds": "9.92"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "0",
+      "lanes": "4",
+      "cycles": "282",
+      "clock_mhz": "25",
+      "microseconds": "11.28"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "1",
+      "lanes": "4",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "1",
+      "lanes": "4",
+      "cycles": "252",
+      "clock_mhz": "25",
+      "microseconds": "10.08"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "1",
+      "lanes": "4",
+      "cycles": "286",
+      "clock_mhz": "25",
+      "microseconds": "11.44"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "2",
+      "lanes": "4",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "2",
+      "lanes": "4",
+      "cycles": "236",
+      "clock_mhz": "25",
+      "microseconds": "9.44"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "2",
+      "lanes": "4",
+      "cycles": "270",
+      "clock_mhz": "25",
+      "microseconds": "10.8"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "3",
+      "lanes": "4",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "3",
+      "lanes": "4",
+      "cycles": "236",
+      "clock_mhz": "25",
+      "microseconds": "9.44"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "3",
+      "lanes": "4",
+      "cycles": "270",
+      "clock_mhz": "25",
+      "microseconds": "10.8"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "0",
+      "lanes": "1",
+      "cycles": "138927",
+      "clock_mhz": "25",
+      "microseconds": "5557.08"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "1",
+      "lanes": "1",
+      "cycles": "138927",
+      "clock_mhz": "25",
+      "microseconds": "5557.08"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "2",
+      "lanes": "1",
+      "cycles": "138980",
+      "clock_mhz": "25",
+      "microseconds": "5559.2"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "3",
+      "lanes": "1",
+      "cycles": "138980",
+      "clock_mhz": "25",
+      "microseconds": "5559.2"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "0",
+      "lanes": "8",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "0",
+      "lanes": "8",
+      "cycles": "262",
+      "clock_mhz": "25",
+      "microseconds": "10.48"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "0",
+      "lanes": "8",
+      "cycles": "328",
+      "clock_mhz": "25",
+      "microseconds": "13.12"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "1",
+      "lanes": "8",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "1",
+      "lanes": "8",
+      "cycles": "266",
+      "clock_mhz": "25",
+      "microseconds": "10.64"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "1",
+      "lanes": "8",
+      "cycles": "332",
+      "clock_mhz": "25",
+      "microseconds": "13.28"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "2",
+      "lanes": "8",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "2",
+      "lanes": "8",
+      "cycles": "234",
+      "clock_mhz": "25",
+      "microseconds": "9.36"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "2",
+      "lanes": "8",
+      "cycles": "300",
+      "clock_mhz": "25",
+      "microseconds": "12.0"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "3",
+      "lanes": "8",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "3",
+      "lanes": "8",
+      "cycles": "234",
+      "clock_mhz": "25",
+      "microseconds": "9.36"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "3",
+      "lanes": "8",
+      "cycles": "300",
+      "clock_mhz": "25",
+      "microseconds": "12.0"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "0",
+      "lanes": "1",
+      "cycles": "138927",
+      "clock_mhz": "25",
+      "microseconds": "5557.08"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "1",
+      "lanes": "1",
+      "cycles": "138927",
+      "clock_mhz": "25",
+      "microseconds": "5557.08"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "2",
+      "lanes": "1",
+      "cycles": "138980",
+      "clock_mhz": "25",
+      "microseconds": "5559.2"
+    },
+    {
+      "path": "legacy SPI complete job",
+      "mode": "3",
+      "lanes": "1",
+      "cycles": "138980",
+      "clock_mhz": "25",
+      "microseconds": "5559.2"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "0",
+      "lanes": "16",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "0",
+      "lanes": "16",
+      "cycles": "300",
+      "clock_mhz": "25",
+      "microseconds": "12.0"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "0",
+      "lanes": "16",
+      "cycles": "430",
+      "clock_mhz": "25",
+      "microseconds": "17.2"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "1",
+      "lanes": "16",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "1",
+      "lanes": "16",
+      "cycles": "294",
+      "clock_mhz": "25",
+      "microseconds": "11.76"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "1",
+      "lanes": "16",
+      "cycles": "424",
+      "clock_mhz": "25",
+      "microseconds": "16.96"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "2",
+      "lanes": "16",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "2",
+      "lanes": "16",
+      "cycles": "230",
+      "clock_mhz": "25",
+      "microseconds": "9.2"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "2",
+      "lanes": "16",
+      "cycles": "360",
+      "clock_mhz": "25",
+      "microseconds": "14.4"
+    },
+    {
+      "path": "stream queue submission only",
+      "mode": "3",
+      "lanes": "16",
+      "cycles": "111",
+      "clock_mhz": "25",
+      "microseconds": "4.44"
+    },
+    {
+      "path": "CV32 request to observed completion; four vectors preloaded",
+      "mode": "3",
+      "lanes": "16",
+      "cycles": "230",
+      "clock_mhz": "25",
+      "microseconds": "9.2"
+    },
+    {
+      "path": "CV32 request through direct-BRAM result readback; excludes DMA",
+      "mode": "3",
+      "lanes": "16",
+      "cycles": "360",
+      "clock_mhz": "25",
+      "microseconds": "14.4"
+    }
+  ],
+  "stream_registers": [
+    {
+      "interface": "CV32",
+      "address": "0x10003000",
+      "access": "R",
+      "name": "IDENTITY",
+      "description": "0x53545231"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003004",
+      "access": "R",
+      "name": "CAPABILITIES",
+      "description": "lanes bits 15:0; vectors per bank bits 31:16"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003008",
+      "access": "R",
+      "name": "STATUS",
+      "description": "command ready bit 0; locked banks bits 9:8; done banks bits 17:16"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x1000300c",
+      "access": "R/W1C",
+      "name": "ERRORS",
+      "description": "command rejection bit 0; locked write bit 1; invalid PS write bit 2; partial CPU control write bit 3"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003010",
+      "access": "R/W",
+      "name": "DESCRIPTOR",
+      "description": "bank bit 0; vector count bits 14:8; tag bits 31:16"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003014",
+      "access": "W",
+      "name": "SUBMIT",
+      "description": "write bit 0 to enqueue descriptor"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003018",
+      "access": "W",
+      "name": "RELEASE",
+      "description": "write bit 8 with bank in bit 0 to release a completed bank"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x1000301c",
+      "access": "R",
+      "name": "COMPLETED_TAGS",
+      "description": "bank 0 low half; bank 1 high half"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003020",
+      "access": "R/W",
+      "name": "MODE",
+      "description": "enable bit 0; activation mode bits 2:1"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003024",
+      "access": "R/W",
+      "name": "ITERATIONS",
+      "description": "min low byte; max second byte; full third byte"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003028",
+      "access": "R/W",
+      "name": "SAMPLING",
+      "description": "error threshold low half; sample rate bits 23:16"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x1000302c",
+      "access": "R/W",
+      "name": "QUALIFICATION",
+      "description": "qualification count low half; violation limit high half"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003030",
+      "access": "R/W",
+      "name": "LEARNING",
+      "description": "update interval low half; freeze bit 16"
+    },
+    {
+      "interface": "CV32",
+      "address": "0x10003100+lane*0x20",
+      "access": "R",
+      "name": "LANE_COUNTERS",
+      "description": "sample count at +0; fallback count +4; maximum error +8; flags +12"
+    },
+    {
+      "interface": "PS stream window",
+      "address": "0x0000-0x0fff",
+      "access": "R",
+      "name": "CONTROL_MIRROR",
+      "description": "read-only mirror of CPU controls"
+    },
+    {
+      "interface": "PS",
+      "address": "0x40010000",
+      "access": "R/W",
+      "name": "STREAM_WINDOW_BASE",
+      "description": "64 KiB AXI BRAM window"
+    },
+    {
+      "interface": "PS",
+      "address": "0x40400000",
+      "access": "R/W",
+      "name": "DMA_CONTROL",
+      "description": "AXI CDMA simple mode with 32-bit data and bursts up to 16 beats"
+    },
+    {
+      "interface": "PS stream window",
+      "address": "0x1000",
+      "access": "W",
+      "name": "INPUT_BANK0",
+      "description": "64 vectors; lane-major within each vector; signed input in low 19 bits of 32-bit word"
+    },
+    {
+      "interface": "PS stream window",
+      "address": "0x2000",
+      "access": "W",
+      "name": "INPUT_BANK1",
+      "description": "same layout as bank 0"
+    },
+    {
+      "interface": "PS stream window",
+      "address": "0x3000",
+      "access": "R",
+      "name": "OUTPUT_BANK0",
+      "description": "sign-extended 16-bit result in each 32-bit word"
+    },
+    {
+      "interface": "PS stream window",
+      "address": "0x4000",
+      "access": "R",
+      "name": "OUTPUT_BANK1",
+      "description": "same layout as bank 0"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x004",
+      "access": "W",
+      "name": "COMMAND",
+      "description": "legacy 1 unchanged; 2 enqueue stream job; 3 release stream bank; 4 query stream status"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x074",
+      "access": "W",
+      "name": "STREAM_BANK",
+      "description": "0 or 1"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x078",
+      "access": "W",
+      "name": "STREAM_COUNT",
+      "description": "1 through 64 vectors"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x07c",
+      "access": "W",
+      "name": "STREAM_TAG",
+      "description": "16-bit caller tag"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x080-0x08c",
+      "access": "W",
+      "name": "STREAM_LEARNING",
+      "description": "qualification count; violation limit; update interval; freeze"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x154",
+      "access": "R",
+      "name": "STREAM_STATUS",
+      "description": "CPU snapshot of stream status"
+    },
+    {
+      "interface": "mailbox",
+      "address": "0x158",
+      "access": "R",
+      "name": "STREAM_TAGS",
+      "description": "CPU snapshot of completed job tags"
+    }
+  ],
+  "stream_throughput": [
+    {
+      "lanes": "4",
+      "sample_interval": "256",
+      "vectors": "2048",
+      "first_result_latency_clocks": "93",
+      "sustained_window_clocks": "2116",
+      "complete_window_clocks": "2209",
+      "clock_mhz": "25",
+      "sustained_activations_per_clock": "3.8714555765595464",
+      "sustained_mactivations_per_second": "96.78638941398866",
+      "scope": "shared-reference activation array; excludes CPU and DMA"
+    },
+    {
+      "lanes": "4",
+      "sample_interval": "32",
+      "vectors": "2048",
+      "first_result_latency_clocks": "93",
+      "sustained_window_clocks": "2410",
+      "complete_window_clocks": "2503",
+      "clock_mhz": "25",
+      "sustained_activations_per_clock": "3.3991701244813277",
+      "sustained_mactivations_per_second": "84.97925311203319",
+      "scope": "shared-reference activation array; excludes CPU and DMA"
+    },
+    {
+      "lanes": "4",
+      "sample_interval": "1",
+      "vectors": "2048",
+      "first_result_latency_clocks": "98",
+      "sustained_window_clocks": "10236",
+      "complete_window_clocks": "10334",
+      "clock_mhz": "25",
+      "sustained_activations_per_clock": "0.8003126221180149",
+      "sustained_mactivations_per_second": "20.007815552950373",
+      "scope": "shared-reference activation array; excludes CPU and DMA"
+    }
+  ],
+  "stream_verification": [
+    {
+      "component": "MAC",
+      "configuration": "4x4",
+      "test": "tb_systolic_param",
+      "checks": "480",
+      "result": "PASS",
+      "scope": "standalone measured latency 8 clocks"
+    },
+    {
+      "component": "MAC",
+      "configuration": "8x8",
+      "test": "tb_systolic_param",
+      "checks": "960",
+      "result": "PASS",
+      "scope": "standalone measured latency 16 clocks"
+    },
+    {
+      "component": "MAC",
+      "configuration": "16x16",
+      "test": "tb_systolic_param",
+      "checks": "1920",
+      "result": "PASS",
+      "scope": "standalone measured latency 32 clocks"
+    },
+    {
+      "component": "divider",
+      "configuration": "32-bit signed",
+      "test": "tb_divider_stream",
+      "checks": "4096",
+      "result": "PASS",
+      "scope": "continuous input backpressure reset and tags"
+    },
+    {
+      "component": "CORDIC",
+      "configuration": "streaming 16-bit Q14",
+      "test": "tb_cordic_stream",
+      "checks": "16384",
+      "result": "PASS",
+      "scope": "93-clock latency II=1 exact reference checks"
+    },
+    {
+      "component": "adaptive activation",
+      "configuration": "4 lanes",
+      "test": "tb_activation_stream_array",
+      "checks": "8192",
+      "result": "PASS",
+      "scope": "standalone sampling fallback learning reset"
+    },
+    {
+      "component": "adaptive activation",
+      "configuration": "8 lanes",
+      "test": "tb_activation_stream_array",
+      "checks": "16384",
+      "result": "PASS",
+      "scope": "standalone sampling fallback learning reset"
+    },
+    {
+      "component": "adaptive activation",
+      "configuration": "16 lanes",
+      "test": "tb_activation_stream_array",
+      "checks": "32768",
+      "result": "PASS",
+      "scope": "standalone sampling fallback learning reset"
+    },
+    {
+      "component": "job engine",
+      "configuration": "4 lanes",
+      "test": "tb_stream_job_engine",
+      "checks": "64",
+      "result": "PASS",
+      "scope": "queued jobs ping-pong overlap ownership invalid commands IRQ reset"
+    },
+    {
+      "component": "job engine",
+      "configuration": "8 lanes",
+      "test": "tb_stream_job_engine",
+      "checks": "128",
+      "result": "PASS",
+      "scope": "queued jobs ping-pong overlap ownership invalid commands IRQ reset"
+    },
+    {
+      "component": "job engine",
+      "configuration": "16 lanes",
+      "test": "tb_stream_job_engine",
+      "checks": "256",
+      "result": "PASS",
+      "scope": "queued jobs ping-pong overlap ownership invalid commands IRQ reset"
+    },
+    {
+      "component": "command queue",
+      "configuration": "depths 1 3 and 4",
+      "test": "tb_command_queue",
+      "checks": "4880",
+      "result": "PASS",
+      "scope": "ordered transfers full empty wraparound simultaneous push-pop and reset"
+    },
+    {
+      "component": "adaptive learning",
+      "configuration": "shared-reference controller",
+      "test": "tb_stream_learning",
+      "checks": "620",
+      "result": "PASS",
+      "scope": "ordered reference comparison including all bin states counters freeze fallback and sampling interval 256"
+    },
+    {
+      "component": "CV32 mailbox",
+      "configuration": "4 streaming lanes",
+      "test": "tb_streaming",
+      "checks": "64",
+      "result": "PASS",
+      "scope": "all activation modes plus legacy ABI malformed requests byte enables ownership reset and replay"
+    },
+    {
+      "component": "CV32 mailbox",
+      "configuration": "8 streaming lanes",
+      "test": "tb_streaming",
+      "checks": "128",
+      "result": "PASS",
+      "scope": "all activation modes plus legacy ABI malformed requests byte enables ownership reset and replay"
+    },
+    {
+      "component": "CV32 mailbox",
+      "configuration": "16 streaming lanes",
+      "test": "tb_streaming",
+      "checks": "256",
+      "result": "PASS",
+      "scope": "all activation modes plus legacy ABI malformed requests byte enables ownership reset and replay"
+    },
+    {
+      "component": "Python clients",
+      "configuration": "legacy and streaming",
+      "test": "unittest",
+      "checks": "13",
+      "result": "PASS",
+      "scope": "mocked interfaces only; physical board verification pending"
+    },
+    {
+      "component": "AXI CDMA",
+      "configuration": "4 lanes DDR and streaming BRAM",
+      "test": "tb_stream_dma",
+      "checks": "256",
+      "result": "PASS",
+      "scope": "32 read bursts and 32 write bursts plus byte enables ownership completion and reset"
+    },
+    {
+      "component": "full FPGA",
+      "configuration": "one-lane recovery image",
+      "test": "Vivado",
+      "checks": "",
+      "result": "PASS",
+      "scope": "routed at 25 MHz with WNS 16.841 ns and WHS 0.027 ns; bitstream and HWH exported; physical board pending"
+    },
+    {
+      "component": "full FPGA",
+      "configuration": "four-lane 64-bit HP0 image",
+      "test": "Vivado",
+      "checks": "",
+      "result": "PASS",
+      "scope": "routed at 25 MHz with WNS 14.109 ns and WHS 0.012 ns; 38719 LUTs 32346 FFs 21 DSPs 33 BRAM36 equivalents; bitstream and HWH exported; 71 DRC warnings and no errors; physical board pending"
+    },
+    {
+      "component": "published baseline",
+      "configuration": "same-device registered sigmoid",
+      "test": "tb_published_comparison",
+      "checks": "65536",
+      "result": "PASS",
+      "scope": "matched Q4.12 interface and 25 MHz; CORDIC uses Q14 internally; no SOTA claim"
+    },
+    {
+      "component": "physical board",
+      "configuration": "four-lane 32-bit HP0 image",
+      "test": "Jupyter",
+      "checks": "256",
+      "result": "FAIL",
+      "scope": "CPU boots and accepts jobs but alternating output words are zero; HP0 width conflicts with standard PYNQ 64-bit boot configuration"
+    },
+    {
+      "component": "board compatibility",
+      "configuration": "64-bit HP0 correction",
+      "test": "Vivado vendor DMA",
+      "checks": "256",
+      "result": "PASS",
+      "scope": "new implementation and export complete; 32 read and 32 write bursts; byte enables ownership completion reset and exact outputs pass; physical-board rerun required"
+    }
+  ],
+  "controlled_resources": {
+    "fixed": {
+      "lut": 15795,
+      "ff": 14944,
+      "dsp": 12
+    },
+    "shared": {
+      "lut": 24821,
+      "ff": 21278,
+      "dsp": 15
+    },
+    "independent": {
+      "lut": 38126,
+      "ff": 32613,
+      "dsp": 24
+    }
+  }
+}

@@ -1,0 +1,10 @@
+rtl/cordic_pkg.sv
+rtl/div_stream.sv
+rtl/act_stream.sv
+rtl/qual_stream.sv
+rtl/mac.sv
+rtl/act_array.sv
+rtl/queue.sv
+rtl/buffers.sv
+rtl/jobs.sv
+rtl/stream_mmio.sv
