@@ -1,0 +1,281 @@
+{
+  "target": "Cadence block-level ASIC implementation; PDK supplied by the lab",
+  "scope": "Configurable RTL-to-layout scripts with GLS, equivalence, extraction, STA and physical-verification adapters; execution and sign-off pending",
+  "top": "stream_mmio",
+  "parameters": {
+    "LANES": 4
+  },
+  "source_inventory": "verification.f",
+  "architecture": "Two 64-vector banks, four-lane MAC/activation engine, queued commands, cached autonomous two-layer model and compact result windows",
+  "boundary": "UVM drives the accelerator CPU-register and host-memory interfaces. CV32 firmware integration is covered separately by the existing tb_streaming regression; this is not full-chip UVM verification.",
+  "technology": "Liberty, LEF, QRC technology, cell models, GDS mapping and foundry-qualified runsets must be supplied. SCL180 is an intended target, not an installed or validated PDK.",
+  "commands_from_phase2_root": {
+    "structural_lint_linux": "bash asic/lint.sh",
+    "local_uvm_windows": "./asic/uvm.ps1",
+    "cadence_uvm_seed_1": "bash asic/uvm.sh 1",
+    "local_rtl_code_coverage_windows": "./asic/uvm.ps1 -CodeCoverage",
+    "asic_stage_list": "bash run.sh asic list",
+    "asic_structure_check": "bash run.sh asic check",
+    "synthesis": "bash run.sh asic syn"
+  },
+  "cadence_requirements": [
+    "Xcelium xrun on PATH with working licenses",
+    "Transfer the Phase2_RTL source tree while preserving its relative paths",
+    "Retain each reports/xcelium_seed_N/uvm.log and its coverage database",
+    "Review code coverage and assertion results in IMC before declaring Cadence verification closure"
+  ],
+  "lint": {
+    "local_tool": "Verilator --lint-only -Wall",
+    "gate": "Fail on errors or warning classes other than the four reviewed classes below; preserve every diagnostic in lint.log",
+    "cadence_lint_status": "Not run: no Cadence lint installation was available locally. Xcelium simulation/elaboration is not a substitute for a dedicated Cadence lint run.",
+    "reviewed_warning_classes": {
+      "PINCONNECTEMPTY": "Unused selected-iteration, queue-occupancy and MAC-idle observation outputs; functional ready/valid and completion connections remain present.",
+      "GENUNNAMED": "Legal unnamed generate blocks; naming/style diagnostic only.",
+      "UNUSEDSIGNAL": "Unused observation/status signals and unused low magnitude bits in the selected top. Retained for shared RTL compatibility; not suppressed in the report.",
+      "UNUSEDPARAM": "Shared package constants unused by this selected hierarchy. Other project hierarchies remain outside this lint top."
+    }
+  },
+  "uvm": {
+    "test": "stream_model_test",
+    "components": [
+      "sequence",
+      "sequencer",
+      "driver",
+      "passive bus monitor",
+      "independent arithmetic scoreboard",
+      "functional covergroup"
+    ],
+    "reference": "activation_reference_pkg fixed-point arithmetic plus independently computed signed dot products, saturation and Q14-to-Q7 rounding",
+    "checks": [
+      "Frozen 271-example model corpus, all four output lanes and compact lane-zero reads",
+      "Counts 1, 2, 7, 15 and 64 across both banks",
+      "Activation-only, fused-layer and autonomous-model jobs",
+      "All four activation modes at fixed 14 iterations",
+      "Seeded random signed operands, biases, weights and fused scaling shifts",
+      "Queued banks retain captured model weights after register changes",
+      "Completion tags, input/output counters, bank release and owned-bank write protection",
+      "Unloaded model, invalid lengths, duplicate submission, early release and invalid writes",
+      "Partial input writes and rejected partial CPU writes",
+      "Reset cancellation during either model layer and recovery",
+      "CPU/host control-register decoding and unmapped reads",
+      "Adaptive minimum/maximum/full iteration clamps, sampling every result, zero error threshold, qualification and violation controls",
+      "Interior and boundary iteration clamp configurations 6, 8, 12, 15 and 16",
+      "All 16 host byte-enable masks on both banks, checked through independent linear activation scoreboard"
+    ],
+    "functional_bins": [
+      "bank",
+      "batch-size categories",
+      "job type",
+      "activation mode",
+      "bank crossed with job type"
+    ],
+    "coverage_limit": "100 percent of these bins does not establish complete RTL code, toggle, branch, assertion, parameter or full-SoC coverage.",
+    "gate": "All seeds complete with PASS marker, zero UVM_ERROR/UVM_FATAL, nonempty scoreboard checks and no unreleased bank",
+    "cadence_execution_status": "Pending execution on the user's Cadence setup"
+  },
+  "separate_regressions": [
+    "tb_mac4_stream: signed extremes, scaling shifts, II=1 and output backpressure",
+    "tb_fused_layer: exact outputs, configuration snapshots and counters",
+    "tb_stream_job_engine: queue, ownership, IRQ and reset",
+    "tb_command_queue: ordered transfers at depths 1, 3 and 4",
+    "tb_stream_learning: adaptive controller state, sampling and freeze",
+    "tb_autonomous_model: frozen expected outputs and all 65536 requantization inputs",
+    "tb_streaming: CV32 firmware integration and legacy compatibility"
+  ],
+  "fpga_artifact_provenance": "The board-tested bitstream remains unchanged. Explicit-width lint corrections create a newer RTL revision; the FPGA build manifest retains the original RTL source hashes. No rebuild is needed to repeat the recorded board experiment using the retained bitstream.",
+  "code_coverage": {
+    "status": "Full closure incomplete; statement, branch and condition coverage measured locally",
+    "summary": "reports/coverage_current.json",
+    "evidence_archive": "reports/uvm_code_coverage.zip",
+    "reproduction": "uvm.ps1 -CodeCoverage runs seeds 1,7,23, merges databases, archives evidence, then removes its generated work directory",
+    "toggle_limitation": "Vivado/XCRG 2023.2 Windows access violation while reporting toggle-instrumented design; sbc reporting succeeds. Baseline sbct database preserved in coverage_baseline.zip.",
+    "numerical_exclusions_applied": [],
+    "scope_constraints_for_lab_review": [
+      {
+        "file": "rtl/qualification_stream.sv",
+        "lines": "124-133",
+        "reason": "stream_mmio resets cfg.lut_reset to zero and exposes no write to set it; LUT-reset statements are unreachable through this production top. Existing standalone learning test exercises this interface separately."
+      },
+      {
+        "file": "rtl/activation_stream_array.sv",
+        "lines": "36-37",
+        "reason": "Invalid LANES fatal guard cannot execute with fixed LANES=4."
+      },
+      {
+        "file": "rtl/fx_signed_divider_stream.sv",
+        "lines": "35-36",
+        "reason": "Invalid-width fatal guard cannot execute with the legal instantiated widths."
+      },
+      {
+        "file": "rtl/hardware_command_queue.sv",
+        "lines": "22",
+        "reason": "Invalid DEPTH/WIDTH predicates are constant false for this instance."
+      },
+      {
+        "file": "rtl/activation_ping_pong.sv",
+        "lines": "29-30",
+        "reason": "Two-bit lane indices cannot exceed three when LANES=4."
+      },
+      {
+        "file": "rtl/cordic_activation_stream.sv",
+        "lines": "77",
+        "reason": "The enclosing qualification controller clamps accepted iteration counts to 6..16; input clamp branches outside 1..16 are unreachable at this boundary."
+      },
+      {
+        "file": "rtl/stream_job_engine.sv",
+        "lines": "70",
+        "reason": "Autonomous hidden values come from Q14 tanh in [-16384,16383], so requant cannot produce a value below -128. The general helper clamp is retained."
+      }
+    ],
+    "remaining_review": [
+      "Instance-level branch and condition holes, including short-circuit/constant predicates",
+      "CORDIC saturation and divider-zero reachability proofs before any numerical exclusions",
+      "Toggle reporting and Cadence Xcelium/IMC rerun in lab"
+    ],
+    "scope_warning": "A standalone module test does not automatically close a production-top instance bin. No blanket exclusions applied."
+  },
+  "intended_end_use": {
+    "asic": "Accelerator/IP only; no CV32 or firmware in ASIC source manifests",
+    "fpga": "CV32 processor, firmware and board integration control/test the accelerator",
+    "shared_rtl": "rtl/",
+    "shared_test_data": "evaluation/data/",
+    "physical_boundary": "stream_mmio is the verified digital interface. Off-chip transport, chip wrapper, pads and SCL180 clock/reset/memory mapping are not yet finalized. Existing npu_spi_top is a legacy transport, not a verified autonomous stream_mmio chip wrapper."
+  },
+  "specification": {
+    "top": "stream_mmio",
+    "lanes": 4,
+    "clock": "clk",
+    "clock_period_ns": 40,
+    "clock_target_status": "Initial 25 MHz budget inherited from the demonstration; not silicon timing closure",
+    "reset": "rst_n active low; input delays include reset and do not waive recovery/removal checks",
+    "interfaces": "CPU register port, host buffer port, completion interrupt; both interfaces sampled on clk",
+    "numerics": "Signed fixed-point activation engine and four-lane MAC, as defined by RTL and UVM reference",
+    "memories": "RTL arrays infer standard cells unless a separately verified SRAM mapping is supplied",
+    "implementation_scope": "Functional accelerator block; no CPU, pads, scan insertion, package, DFT/ATPG, EM/IR, or full-chip sign-off",
+    "units": "Timing values assume library ns; load is in Liberty capacitance units; geometry is in microns. Verify units before use."
+  },
+  "implementation_stages": [
+    {
+      "step": "1",
+      "command": "spec",
+      "name": "Specification",
+      "script": "flow.tcl"
+    },
+    {
+      "step": "2",
+      "command": "rtl",
+      "name": "RTL Design",
+      "script": "verification.f"
+    },
+    {
+      "step": "3",
+      "command": "sim",
+      "name": "RTL Simulation",
+      "script": "uvm.sh"
+    },
+    {
+      "step": "4",
+      "command": "lint",
+      "name": "RTL Lint",
+      "script": "lint.tcl"
+    },
+    {
+      "step": "5",
+      "command": "syn",
+      "name": "Synthesis",
+      "script": "syn.tcl"
+    },
+    {
+      "step": "6",
+      "command": "lec",
+      "name": "LEC",
+      "script": "Genus-generated rtl_map.do and map_syn.do"
+    },
+    {
+      "step": "7",
+      "command": "pregls",
+      "name": "Pre-Layout GLS",
+      "script": "gls.tcl"
+    },
+    {
+      "step": "8",
+      "command": "floor",
+      "name": "Floorplanning",
+      "script": "pnr.tcl"
+    },
+    {
+      "step": "9",
+      "command": "power",
+      "name": "Power Planning",
+      "script": "pnr.tcl"
+    },
+    {
+      "step": "10",
+      "command": "place",
+      "name": "Placement",
+      "script": "pnr.tcl"
+    },
+    {
+      "step": "11",
+      "command": "cts",
+      "name": "Clock Tree Synthesis",
+      "script": "pnr.tcl"
+    },
+    {
+      "step": "12",
+      "command": "route",
+      "name": "Routing",
+      "script": "pnr.tcl"
+    },
+    {
+      "step": "13",
+      "command": "pex",
+      "name": "PEX",
+      "script": "pex.tcl"
+    },
+    {
+      "step": "14",
+      "command": "sta",
+      "name": "Post-Layout STA",
+      "script": "sta.tcl"
+    },
+    {
+      "step": "15",
+      "command": "postgls",
+      "name": "Post-Layout GLS",
+      "script": "gls.tcl"
+    },
+    {
+      "step": "16a",
+      "command": "drc",
+      "name": "DRC",
+      "script": "pv.tcl"
+    },
+    {
+      "step": "16b",
+      "command": "arc",
+      "name": "Antenna Rule Check",
+      "script": "pv.tcl"
+    },
+    {
+      "step": "17",
+      "command": "lvs",
+      "name": "LVS",
+      "script": "pv.tcl"
+    },
+    {
+      "step": "18",
+      "command": "eco",
+      "name": "ECO",
+      "script": "pnr.tcl"
+    },
+    {
+      "step": "19",
+      "command": "final_lec",
+      "name": "Final LEC",
+      "script": "lec.tcl"
+    }
+  ],
+  "flow_configuration": "flow/config.tcl, optionally overridden by ASIC_CONFIG=/absolute/path/site.tcl",
+  "execution_status": "Scripts are templates for the installed Cadence release; no foundry sign-off, synthesis PPA, extraction, or LEC pass is claimed."
+}
