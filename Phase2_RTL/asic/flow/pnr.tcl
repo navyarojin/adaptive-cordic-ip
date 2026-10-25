@@ -13,7 +13,11 @@ proc export_layout {directory} {
     file mkdir $directory
     saveDesign [file join $directory design.enc]
     saveNetlist [file join $directory design.v]
-    saveNetlist [file join $directory power.v] -includePowerGround
+    if {$cfg(top) eq "chip"} {
+        saveNetlist [file join $directory power.v] -phys -includePowerGround -includePhysicalInst
+    } else {
+        saveNetlist [file join $directory power.v] -includePowerGround
+    }
     defOut -floorplan -netlist -routing [file join $directory design.def]
     streamOut [file join $directory design.gds] -mapFile $cfg(gds_map) -merge $cfg(gds_cells) -mode ALL
 }
@@ -25,6 +29,10 @@ switch -- $stage {
         set init_lef_file $cfg(lef)
         set init_pwr_net $cfg(power)
         set init_gnd_net $cfg(ground)
+        if {$cfg(top) eq "chip"} {
+            set init_pwr_net [list $cfg(power) $cfg(io_power)]
+            set init_gnd_net [list $cfg(ground) $cfg(io_ground)]
+        }
         set view_file [file join $out pnr views.tcl]
         set fd [open $view_file w]
         puts $fd [list source [file join $flow_dir common.tcl]]
@@ -32,17 +40,26 @@ switch -- $stage {
         close $fd
         set init_mmmc_file $view_file
         init_design
-        floorPlan -site $cfg(site) -r $cfg(aspect) $cfg(density) $cfg(margin) $cfg(margin) $cfg(margin) $cfg(margin)
-        hook floor_hook
+        if {$cfg(top) eq "chip"} {
+            hook pad_floor_hook
+            source [file join $asic_dir pads place.tcl]
+        } else {
+            floorPlan -site $cfg(site) -r $cfg(aspect) $cfg(density) $cfg(margin) $cfg(margin) $cfg(margin) $cfg(margin)
+            hook floor_hook
+        }
     }
     power {
         load_step floor
-        globalNetConnect $cfg(power) -type pgpin -pin $cfg(power_pin) -inst *
-        globalNetConnect $cfg(ground) -type pgpin -pin $cfg(ground_pin) -inst *
-        set nets [list $cfg(power) $cfg(ground)]
-        addRing -nets $nets -type core_rings -follow core -layer [list top $cfg(ring_h) bottom $cfg(ring_h) left $cfg(ring_v) right $cfg(ring_v)] -width $cfg(ring_width) -spacing $cfg(ring_spacing) -offset $cfg(ring_offset)
-        addStripe -nets $nets -layer $cfg(stripe_layer) -direction vertical -width $cfg(stripe_width) -spacing $cfg(ring_spacing) -set_to_set_distance $cfg(stripe_pitch)
-        sroute -nets $nets -connect {corePin blockPin floatingStripe}
+        if {$cfg(top) eq "chip"} {
+            hook pad_power_hook
+        } else {
+            globalNetConnect $cfg(power) -type pgpin -pin $cfg(power_pin) -inst *
+            globalNetConnect $cfg(ground) -type pgpin -pin $cfg(ground_pin) -inst *
+            set nets [list $cfg(power) $cfg(ground)]
+            addRing -nets $nets -type core_rings -follow core -layer [list top $cfg(ring_h) bottom $cfg(ring_h) left $cfg(ring_v) right $cfg(ring_v)] -width $cfg(ring_width) -spacing $cfg(ring_spacing) -offset $cfg(ring_offset)
+            addStripe -nets $nets -layer $cfg(stripe_layer) -direction vertical -width $cfg(stripe_width) -spacing $cfg(ring_spacing) -set_to_set_distance $cfg(stripe_pitch)
+            sroute -nets $nets -connect {corePin blockPin floatingStripe}
+        }
     }
     place {
         load_step power

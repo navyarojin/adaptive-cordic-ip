@@ -139,7 +139,7 @@
     "fpga": "CV32 processor, firmware and board integration control/test the accelerator",
     "shared_rtl": "rtl/",
     "shared_test_data": "evaluation/data/",
-    "physical_boundary": "stream_mmio is the verified digital interface. Off-chip transport, chip wrapper, pads and SCL180 clock/reset/memory mapping are not yet finalized. Existing npu_spi_top is a legacy transport, not a verified autonomous stream_mmio chip wrapper."
+    "physical_boundary": "Optional 170-signal-pad chip wrapper is implemented. Package, supply/corner/filler macros, rail/ESD verification and full physical sign-off still require the licensed PDK."
   },
   "specification": {
     "top": "stream_mmio",
@@ -151,7 +151,7 @@
     "interfaces": "CPU register port, host buffer port, completion interrupt; both interfaces sampled on clk",
     "numerics": "Signed fixed-point activation engine and four-lane MAC, as defined by RTL and UVM reference",
     "memories": "RTL arrays infer standard cells unless a separately verified SRAM mapping is supplied",
-    "implementation_scope": "Functional accelerator block; no CPU, pads, scan insertion, package, DFT/ATPG, EM/IR, or full-chip sign-off",
+    "implementation_scope": "Functional accelerator block plus optional 170-signal-pad chip wrapper; PDK/package pad ring, supplies, corners, voltage and ESD sign-off require verified kit collateral; no CPU or DFT/ATPG integration.",
     "units": "Timing values assume library ns; load is in Liberty capacitance units; geometry is in microns. Verify units before use."
   },
   "implementation_stages": [
@@ -277,5 +277,43 @@
     }
   ],
   "flow_configuration": "flow/config.tcl, optionally overridden by ASIC_CONFIG=/absolute/path/site.tcl",
-  "execution_status": "Scripts are templates for the installed Cadence release; no foundry sign-off, synthesis PPA, extraction, or LEC pass is claimed."
+  "execution_status": "Scripts are templates for the installed Cadence release; no foundry sign-off, synthesis PPA, extraction, or LEC pass is claimed.",
+  "pad_integration": {
+    "top": "chip",
+    "core": "stream_mmio, LANES=4",
+    "rtl": "pads/chip.sv",
+    "inventory": "pads/map.csv",
+    "signal_pads": 170,
+    "clock_inputs": 1,
+    "other_inputs": 104,
+    "outputs": 65,
+    "cells": {
+      "clock": "pc3c01 .CP external / .CLK core",
+      "input": "pc3d01 .PAD external / .CIN core",
+      "output": "pc3o05 .I core / .PAD external"
+    },
+    "source": "User-provided SCL180_IO_Cell_Library_Reference.docx, review draft dated 2026-10-25; example signatures only, not installed-PDK verification",
+    "cell_status": "Provisional until matched to the exact licensed I/O-family models and Liberty/LEF/GDS",
+    "physical_status": "draft.io contains signal ordering only. Supply/corner macro names, pad spacing/orientations, filler continuity, ESD and rail mappings are intentionally not invented. Complete ring placement and power hooks are required.",
+    "verification": "pads/test.sv uses abstract signal-cell models only when PAD_MODEL_TEST is defined. Those models are excluded from implementation and normal chip simulation.",
+    "abstract_model_test": {
+      "tool": "Vivado 2023.2",
+      "date": "2026-10-25",
+      "result": "PASS",
+      "checks": 241,
+      "scope": "Abstract pad logic only: 104 non-clock input bits, output-bit patterns, clock passthrough, reset equivalence and padded identity-register read. Not real PDK model, timing, voltage, ESD or physical verification."
+    },
+    "abstract_uvm_test": {
+      "tool": "Vivado 2023.2",
+      "date": "2026-10-25",
+      "result": "PASS",
+      "seed": 1,
+      "checked_outputs": 7820,
+      "jobs": 53,
+      "uvm_errors": 0,
+      "uvm_fatals": 0,
+      "clock_ns": 40,
+      "scope": "Existing streaming UVM scoreboard executed through chip using abstract pass-through pad models. No actual SCL timing/voltage/physical validation."
+    }
+  }
 }

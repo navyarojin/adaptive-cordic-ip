@@ -1,5 +1,16 @@
 array set cfg {
     top stream_mmio
+    pad_verified 0
+    pad_ring_verified 0
+    pad_models {}
+    pad_io {}
+    pad_floor_hook {}
+    pad_physical_hook {}
+    pad_power_hook {}
+    pad_supply_instances {}
+    pad_corner_instances {}
+    io_power {}
+    io_ground {}
     clock clk
     reset rst_n
     period 40.0

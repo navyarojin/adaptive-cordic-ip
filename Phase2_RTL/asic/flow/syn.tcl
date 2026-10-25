@@ -7,6 +7,12 @@ read_libs $cfg(lib_max)
 read_hdl -sv [source_list]
 elaborate $cfg(top)
 check_design -unresolved
+if {$cfg(top) eq "chip"} {
+    set_db auto_ungroup none
+    set pads [get_db insts */pad_*]
+    if {[llength $pads]!=170} {error "Expected 170 bound signal-pad cells before synthesis"}
+    set_db $pads .preserve true
+}
 read_sdc [file join $flow_dir constraints.sdc]
 set_db syn_generic_effort medium
 set_db syn_map_effort medium

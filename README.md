@@ -56,3 +56,9 @@ bash run.sh asic syn
 | 18-19 | `eco`, `final_lec` | Innovus, Conformal |
 
 Command references: [Genus/Conformal handoff](https://community.cadence.com/cadence_technology_forums/f/logic-design/59112/conformal-cec-checking), [Quantus extraction setup](https://community.cadence.com/cadence_technology_forums/f/digital-implementation/33561/qrc-extraction-issue), [SDF corner export](https://community.cadence.com/cadence_technology_forums/f/digital-implementation/17972/write_sdf-in-mmmc-flow).
+
+## SCL180 pads
+
+`Phase2_RTL/asic/pads/chip.sv` wraps the four-lane core with 170 signal pads. `map.csv` lists connections; `draft.io` contains signal ordering only.
+
+From `Phase2_RTL`, run `ASIC_CONFIG="$PWD/asic/pads/profile.tcl" bash run.sh asic check`. Implementation needs verified PDK cell models, libraries, a complete pad ring, and floor/power hooks configured in `site.tcl`. The supplied pad-cell interfaces are provisional; abstract-model tests do not validate the physical ring.

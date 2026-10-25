@@ -44,7 +44,7 @@ proc launch {stage} {
         return
     }
     if {$stage eq "rtl"} {puts [join [source_list] \n]; return}
-    if {$stage eq "sim"} {run_cmd [list bash [file join $asic_dir uvm.sh] 1]; return}
+    if {$stage eq "sim" && $cfg(top) eq "stream_mmio"} {run_cmd [list bash [file join $asic_dir uvm.sh] 1]; return}
     preflight $stage
     file mkdir $out
     set ::env(ASIC_STAGE) $stage
@@ -76,7 +76,7 @@ proc launch {stage} {
             run_logged [concat $cfg(conformal) [list -nogui -tclmode -dofile [file join $flow_dir lec.tcl]]] $log
             run_cmd [concat $cfg(lec_check) [list $log]]
         }
-        pregls - postgls {source [file join $flow_dir gls.tcl]}
+        sim - pregls - postgls {source [file join $flow_dir gls.tcl]}
         drc - arc - lvs {source [file join $flow_dir pv.tcl]}
     }
     switch -- $stage {
@@ -97,7 +97,7 @@ if {[catch {
         }
         check {
             source_list
-            foreach file [glob -directory $flow_dir *.tcl *.sdc] {
+            foreach file [concat [glob -directory $flow_dir *.tcl *.sdc] [glob -directory [file join $asic_dir pads] *.tcl]] {
                 set fd [open $file r]; set text [read $fd]; close $fd
                 if {![info complete $text]} {error "Incomplete Tcl syntax: $file"}
             }

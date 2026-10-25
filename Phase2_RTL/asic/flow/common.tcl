@@ -14,14 +14,17 @@ if {[info exists ::env(ASIC_CONFIG)]} {
     set ::env(ASIC_CONFIG) $site_config
 }
 if {[info exists ::env(ASIC_REV)]} {set cfg(revision) $::env(ASIC_REV)}
-if {$cfg(top) ne "stream_mmio"} {error "The supplied verification harness targets stream_mmio only"}
+if {$cfg(top) ni {stream_mmio chip}} {error "Supported tops: stream_mmio or chip"}
+if {$cfg(top) eq "chip" && ![info exists ::env(ASIC_OUT)] && $out eq [file join $asic_dir work]} {
+    set out [file join $asic_dir work-chip]
+}
 if {$cfg(revision) ni {route eco}} {error "ASIC_REV must be route or eco"}
-foreach key {lib_max lib_min lef sim_models lec_models gds_cells} {
+foreach key {lib_max lib_min lef sim_models lec_models gds_cells pad_models} {
     set paths {}
     foreach path $cfg($key) {lappend paths [file normalize $path]}
     set cfg($key) $paths
 }
-foreach key {qrc_max qrc_min gds_map floor_hook finish_hook sta_hook eco_hook lint_hook} {
+foreach key {qrc_max qrc_min gds_map floor_hook finish_hook sta_hook eco_hook lint_hook pad_io pad_floor_hook pad_physical_hook pad_power_hook} {
     if {$cfg($key) ne ""} {set cfg($key) [file normalize $cfg($key)]}
 }
 if {$cfg(period)<=0 || $cfg(input_delay)<0 || $cfg(output_delay)<0 || $cfg(uncertainty)<0} {error "Invalid timing budget"}
@@ -38,7 +41,7 @@ proc files_exist {paths} {
     }
 }
 proc source_list {} {
-    global asic_dir rtl_dir
+    global asic_dir rtl_dir cfg
     set fd [open [file join $asic_dir verification.f] r]
     set result {}
     foreach line [split [read $fd] \n] {
@@ -46,6 +49,7 @@ proc source_list {} {
         if {$line ne ""} {lappend result [file normalize [file join $rtl_dir $line]]}
     }
     close $fd
+    if {$cfg(top) eq "chip"} {lappend result [file join $asic_dir pads chip.sv]}
     files_exist $result
     return $result
 }
@@ -64,14 +68,26 @@ proc run_cmd {command} {
 proc preflight {stage} {
     global cfg out rev_dir
     source_list
+    if {$cfg(top) eq "chip" && $stage ni {spec rtl}} {
+        if {!$cfg(pad_verified)} {error "Chip mode requires pad_verified=1 after matching the real PDK signatures, voltage family, Liberty/LEF and models"}
+        need pad_models
+        files_exist $cfg(pad_models)
+        if {$stage in {floor power place cts route eco pex sta drc arc lvs}} {
+            if {!$cfg(pad_ring_verified)} {error "Approve the complete PDK/package pad ring before physical implementation"}
+            need io_power io_ground pad_supply_instances pad_corner_instances
+            if {[llength $cfg(pad_corner_instances)]!=4} {error "Four corner-instance names are required"}
+        }
+        if {$stage eq "floor"} {need pad_io pad_floor_hook pad_physical_hook; files_exist [list $cfg(pad_io) $cfg(pad_floor_hook) $cfg(pad_physical_hook)]}
+        if {$stage eq "power"} {need pad_power_hook; files_exist [list $cfg(pad_power_hook)]}
+    }
     switch -- $stage {
         syn {need lib_max; files_exist $cfg(lib_max)}
         lint {need lint_hook lint_check; files_exist [list $cfg(lint_hook)]}
         floor - power - place - cts - route - eco - pex {
             need lib_max lib_min lef qrc_max qrc_min temp_max temp_min site
             files_exist [concat $cfg(lib_max) $cfg(lib_min) $cfg(lef) [list $cfg(qrc_max) $cfg(qrc_min)]]
-            if {$stage eq "floor"} {need floor_hook; files_exist [list $cfg(floor_hook)]}
-            if {$stage eq "power"} {need ring_h ring_v ring_width ring_spacing ring_offset stripe_layer stripe_width stripe_pitch}
+            if {$stage eq "floor" && $cfg(top) ne "chip"} {need floor_hook; files_exist [list $cfg(floor_hook)]}
+            if {$stage eq "power" && $cfg(top) ne "chip"} {need ring_h ring_v ring_width ring_spacing ring_offset stripe_layer stripe_width stripe_pitch}
             if {$stage eq "route" || $stage eq "eco"} {
                 need finish_hook gds_map gds_cells
                 files_exist [concat [list $cfg(finish_hook) $cfg(gds_map)] $cfg(gds_cells)]

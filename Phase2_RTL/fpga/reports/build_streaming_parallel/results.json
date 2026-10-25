@@ -1,0 +1,225 @@
+{
+  "started_at": "2026-10-25T15:45:03.669329+05:30",
+  "status": "passed",
+  "tool": "Vivado 2023.2",
+  "part": "xc7z020clg400-1",
+  "clock_mhz": 25,
+  "lanes": 4,
+  "firmware_rebuilt": true,
+  "firmware_mem_sha256": "459d1c307515ae850fa16cdc8b6429a6cfc63a08834766b468834cc290df7f5d",
+  "board_execution_verified": false,
+  "source_sha256": {
+    "Phase2_RTL/fpga/rtl/cv32e40p_apu_core_pkg.sv": "f92ae768b9633b7f8716109ae2b124a08da00949c0652a2bbceb34fea7bfaec9",
+    "Phase2_RTL/fpga/rtl/cv32e40p_fpu_pkg.sv": "623ee8c0c1806e65c2d436333fac8b2bc61aebbc13ac167821d0e153c74008c5",
+    "Phase2_RTL/fpga/rtl/cv32e40p_pkg.sv": "543d5fff6327d0871447336a73d8dc91bd51479d8b68bfa6eb89970e0b759b15",
+    "Phase2_RTL/fpga/rtl/cv32e40p_if_stage.sv": "345a163a6d304ecf616b994a58f90b00a3a2d38ed2eb3d43e0bdb298090570ca",
+    "Phase2_RTL/fpga/rtl/cv32e40p_cs_registers.sv": "4fb1473ca1829b0e5b828e78f2b82d5bc029b6a1c8665752c93060e9e3830c32",
+    "Phase2_RTL/fpga/rtl/cv32e40p_register_file_ff.sv": "ad66c77219852c172dd3a7deac6dc4794fa395e94a1a7fb5edb833679981678d",
+    "Phase2_RTL/fpga/rtl/cv32e40p_load_store_unit.sv": "ee4fa601d79074b92d2d6e36c6504a5ee9db5b6f390cf37a7f4899a1865f0e94",
+    "Phase2_RTL/fpga/rtl/cv32e40p_id_stage.sv": "5a6417df789d67711db6091c1b4ebd8f367fd4af594bdbebcfd178d869532ac6",
+    "Phase2_RTL/fpga/rtl/cv32e40p_aligner.sv": "a16d74085075f0df92791be7c70255277c88f0bba335a953ea94b8c7bd6bee99",
+    "Phase2_RTL/fpga/rtl/cv32e40p_decoder.sv": "d4bfe7c9f991f869bd4307fab7fdf13ee67a66e643e93bf9539359422a8af894",
+    "Phase2_RTL/fpga/rtl/cv32e40p_compressed_decoder.sv": "c219e9f36878ad4e25b5ea6a25db57f889c7c5c9d3810b5b3fbd66266a50fa92",
+    "Phase2_RTL/fpga/rtl/cv32e40p_fifo.sv": "e71ad10ad27da04a8464ab2c40323472045b270559a7a040f359f2a61c26aee9",
+    "Phase2_RTL/fpga/rtl/cv32e40p_prefetch_buffer.sv": "6355bb8879baf7b9ac90fda8e792aea1a28e26015c9fda565c21d490195646c5",
+    "Phase2_RTL/fpga/rtl/cv32e40p_hwloop_regs.sv": "24e4886a761898475a4e344a2cbaa1fe8f860f70a392151f23ac341d798aee64",
+    "Phase2_RTL/fpga/rtl/cv32e40p_mult.sv": "94ac97c677c1f96da5cca247ae9306096a4687d2f0627eab5abefbabfbe1e865",
+    "Phase2_RTL/fpga/rtl/cv32e40p_int_controller.sv": "6be163de1bd48d7e307682822f99d93fc9c2f2a2cfb28ca186f0ee0a55df684c",
+    "Phase2_RTL/fpga/rtl/cv32e40p_ex_stage.sv": "4a9987731f2a67b729bdec9c407767321b1a3d3e657ffaeba5a16256cb8c9309",
+    "Phase2_RTL/fpga/rtl/cv32e40p_alu_div.sv": "a77d1dfbf27666d118674a272fe8a1bea91bafb9377ff1e5056a7a29c2c5d87e",
+    "Phase2_RTL/fpga/rtl/cv32e40p_alu.sv": "1f62360df29810a60f7c059d6e1a95276c5aa97b1a0b2631f9b1dd9b0030730f",
+    "Phase2_RTL/fpga/rtl/cv32e40p_ff_one.sv": "ae5c6192b38d4f987493f6f131f32e513d1832803d4dfbc7c9258111b9029586",
+    "Phase2_RTL/fpga/rtl/cv32e40p_popcnt.sv": "056f553cfb7d2903a187335688fe63df3306d28b50dfe38e9b02c583e83fe456",
+    "Phase2_RTL/fpga/rtl/cv32e40p_apu_disp.sv": "a64ebf3599aade4a25a39708a3ca119f0ab5accb53538f84dc387e65163c2530",
+    "Phase2_RTL/fpga/rtl/cv32e40p_controller.sv": "3828ade15e98ce5aa7be80639902cdc7e6273fca8c36c02cd2b60551c5133629",
+    "Phase2_RTL/fpga/rtl/cv32e40p_obi_interface.sv": "7f768950539f27e023330dd2e00d2549e5e50b79851961ce8258d65f1f93b68d",
+    "Phase2_RTL/fpga/rtl/cv32e40p_prefetch_controller.sv": "42db5f1084ae5e6c352993631666b8a90a1a2f668b60687a4a74037df274c0e6",
+    "Phase2_RTL/fpga/rtl/cv32e40p_sleep_unit.sv": "add2ec47d95e2445e92df430873d56c0ade4650a5956addcdad89653a0c17193",
+    "Phase2_RTL/fpga/rtl/cv32e40p_core.sv": "35a5a6ffbf836ca679d153a8941bab97ab3266935fd91336ee0a1c1a1ce9956c",
+    "Phase2_RTL/fpga/rtl/cv32e40p_top.sv": "2303c2b07ef76ed067e17be54be0b5dc7cd4e3a872809e35d62b46016e8f52f8",
+    "Phase2_RTL/rtl/cordic_pkg.sv": "245aac1243a03da1a51e796ee2a065f7fb7098d708f9f2f0d6da8f5ee8698a1b",
+    "Phase2_RTL/rtl/div.sv": "3b2992f472480abac41b29fdf05175bed3c9709d847ce1b4a3c31b68e6cd89c8",
+    "Phase2_RTL/rtl/div_stream.sv": "0dc9f133d549bec912a634911203efd1417b1a5144010e55811b411db4e6a930",
+    "Phase2_RTL/rtl/act_stream.sv": "9411863c39826dec805811e2649900093dc361d4541e0db713b5472a0086e519",
+    "Phase2_RTL/rtl/iter.sv": "0a0a03d29d5ba8fdb641fafce405e9040a6566a230ccb1748651147c83825e30",
+    "Phase2_RTL/rtl/core.sv": "d53cab290eff3dd32fcd27588cc166d0b1845f3e982180a5b614103f3bbee1d1",
+    "Phase2_RTL/rtl/qual.sv": "8bca0bf0abffd98c3dad05d04d9385fc986a647be454882634aaf41ac25fadaf",
+    "Phase2_RTL/rtl/qual_stream.sv": "6a138853515e1446d915fb9496a71a1f63b0fedb0bdbaafda9dff77da616770a",
+    "Phase2_RTL/rtl/csr_apb.sv": "5bba3c6158a980b0d05073aa26af9cf231666ad7192fbf35070791b17f900edd",
+    "Phase2_RTL/rtl/systolic_cfg.sv": "c66be7a6b77015723a443fa8ac9552d608d4366772d7a6994324acf2648f84b4",
+    "Phase2_RTL/rtl/mac.sv": "35ed196765b4a07cc4e2c33aac69d91d63da1476e35adfdd3df6de7b27bc99ce",
+    "Phase2_RTL/rtl/systolic.sv": "a7957dc8ba141b732358b3b8f19d23467cbff926a2c185cefe73fa1024811865",
+    "Phase2_RTL/rtl/act_ip.sv": "586d15fbb3fd3404895f50a7570d961c031c3cd70545316de02ea61981edb88d",
+    "Phase2_RTL/rtl/act_array.sv": "f69f7f5a641919a8f22bbfe97d595bc5f5dbe77db0fdc7437c5fa4936cea0ff1",
+    "Phase2_RTL/rtl/queue.sv": "120d6ef762d9a288020bfcca1ded73aecb77566bf867f424ee3a5be326209c4b",
+    "Phase2_RTL/rtl/buffers.sv": "84b7df8422aad3b2a7a9b31cfab45f7655fa18e2cd6961d7fe5b2d82c1127edc",
+    "Phase2_RTL/rtl/jobs.sv": "9c3b321d62a8a2c18eab678e8c613b2feef384eff3e31229b54362e3f0ef1519",
+    "Phase2_RTL/rtl/accel.sv": "b76322d358d8bdf000dbcb0e044e313facc1176c49e79dd64cdd099af50735f1",
+    "Phase2_RTL/rtl/spi_bridge.sv": "8314e73e1b7c74f52d08fc77b3348a3d42d04f94db0947b57a3cdeea8218dbb6",
+    "Phase2_RTL/rtl/spi_top.sv": "95f139d2ead35d3241a78947c36c311aa84b402169686bb5d0e11c27e5df3063",
+    "Phase2_RTL/rtl/stream_mmio.sv": "09195f02149853350b5b2416f0ccd030ca8a2bc1a8eca9fd891148e6d13476ab",
+    "Phase2_RTL/fpga/rtl/cv32e40p_clock_gate.sv": "6b213e83061a7e39edd66d74605efda439edfc7759b9563243cfbfdd6dec06c6",
+    "Phase2_RTL/fpga/rtl/host_ram.sv": "e49d8a8e1cc32c149b625ae1c68c3947efee6185c8e1373458d212cce8742827",
+    "Phase2_RTL/fpga/rtl/spi_master80.sv": "733eafdc18bf4461c9ef616b243128da9c4910d7065cd3beed19169735fa5f0b",
+    "Phase2_RTL/fpga/rtl/uart_tx.sv": "bc6af3e73ff67333390dbf76c13cee145c8979fc8c76d91fe1985453bc653b9a",
+    "Phase2_RTL/fpga/rtl/soc.sv": "4a4b429f13b4b6c38d7b9b1152357792a90ec0821fa49d7d93f5397df550bd97",
+    "Phase2_RTL/fpga/rtl/host.sv": "f67032e7f81b0c14768f87f07efb75fbf1c839c7234f1dfff84616fd16b53b3b",
+    "Phase2_RTL/fpga/scripts/area.tcl": "896e647f9dbff0dafb5bcc4aab712e0fee149679fbb63aed6b599158ad6f7174",
+    "Phase2_RTL/fpga/scripts/arith.tcl": "5dfedfc9598a21fb540305395862f6a43d870715067ea2563c93f4b85ff001ce",
+    "Phase2_RTL/fpga/scripts/build.tcl": "e9cd655aadc446c129030c783905574b4bc0722ade30c40828dfb680f66a3c6a",
+    "Phase2_RTL/fpga/scripts/build_axi.tcl": "2ffabe220e4375e594486e5fb0a82d3ff3f426ed2804ccc2560746be99462203",
+    "Phase2_RTL/fpga/scripts/build_parallel.tcl": "7bdff2601ace961db06c6416833b697ee2d456409c3a31e3968aed4ba854b927",
+    "Phase2_RTL/fpga/scripts/check_axi.tcl": "4e05258cd87df3c60a0b158270481ee27f6e8f03eb7d972b404ab0d456f36ed0",
+    "Phase2_RTL/fpga/scripts/check_dma.tcl": "9965237da0cc6b655a37b5ba50c45eef37e4028633b9b306e29396cc7417b207",
+    "Phase2_RTL/fpga/scripts/check_stream.tcl": "30a01ab5bf3b1b8f3c19bdc9cbec6389045824e9c82dda885bff6d8ae134c375",
+    "Phase2_RTL/fpga/scripts/check_system.tcl": "499f3fddb101ef637a612b50a0c3600edad7174df90b32cd250fd1378db70833",
+    "Phase2_RTL/fpga/scripts/compare.tcl": "68cc04be2520f6f60cd74b0f81f8f2115cd7dca419d4c3348861cedaa12a92e7",
+    "Phase2_RTL/fpga/scripts/create.tcl": "e85a21cd93a1f73b28ea17a6851454d089ae5853e820f35a9dda3e4f485e018a",
+    "Phase2_RTL/fpga/scripts/dma.tcl": "5eae65fda0bb15383de3a385416e52ddd0393ecb2d0c0485cd8902c671bd8e77",
+    "Phase2_RTL/fpga/scripts/fixed.tcl": "2abb5cd3a91f6dcc0964630ef93a05a81929a64200ca6f6daafc81fa26422dac",
+    "Phase2_RTL/fpga/scripts/fused.tcl": "87d0369b9cdbf971b2c005fede83309f4cb536c20467104daa05682f3737327e",
+    "Phase2_RTL/fpga/scripts/published.tcl": "b7081f6a774cc65016dbbfeaa7c42d7883ac0ea5d363455e3796ca49d7a1e709",
+    "Phase2_RTL/fpga/scripts/rebuild.tcl": "f49bdf00398e09b00f8c400b3414a565b46161cb3e420ca92d44ce36ef8e2f41",
+    "Phase2_RTL/fpga/scripts/stream.tcl": "83f91352247a10cc4a0d4605393e3a71983bf1f0f3a55052c0a99f5cd0051070",
+    "Phase2_RTL/fpga/scripts/board.xdc": "88854f6fade97e73f82ec55c01196f6b0b9d9bfa0fa76bf66da00eb226662dc1",
+    "Phase2_RTL/fpga/rtl/host_bd.v": "0e16e0d58c07517cb3dd3aac25d400f8f36d50559a0c122881b9123c02723827",
+    "Phase2_RTL/fpga/rtl/stream_bd.v": "cc188c459bbc1a527ea3f40afa7612368ff64f1eaede1722992751eed32bad9d"
+  },
+  "compute_regression": {
+    "status": "passed",
+    "test_count": 13,
+    "tests": {
+      "tb_accelerator": [
+        "PASS: 733 bit-exact activation/NPU output checks plus fallback, LUT, sampling, IRQ, byte-enable, busy rejection, and reset checks"
+      ],
+      "tb_activation_stream_array": [
+        "PASS adaptive streaming array lanes=4 checks=8192 sampling/fallback/reset"
+      ],
+      "tb_command_queue": [
+        "PASS command queue depth=1 ordered transfers=1329",
+        "PASS command queue depth=3 ordered transfers=1744",
+        "PASS command queue depth=4 ordered transfers=1807"
+      ],
+      "tb_cordic_stream": [
+        "PASS streaming CORDIC: 16384 exact reference checks, latency=93 clocks, II=1, backpressure",
+        "PASS streaming CORDIC reset during active pipeline"
+      ],
+      "tb_divider_stream": [
+        "PASS streaming divider: 4096 signed/rounding/zero/tag checks, backpressure and reset flush"
+      ],
+      "tb_fused_layer": [
+        "PASS fused layer: 2568 outputs; four activation modes; two banks; config snapshots; exact counters; activation-only compatibility; reset"
+      ],
+      "tb_mac4_stream": [
+        "PASS MAC4: 8036 lane checks; II=1; signed extremes; shifts; random stalls; reset"
+      ],
+      "tb_npu_spi": [
+        "PASS tb_npu_spi: 160 checks; 16 NPU mode/pattern combinations, SPI errors, byte enables, fallback, framing and reset"
+      ],
+      "tb_spi_bridge": [
+        "PASS tb_spi_bridge: 12 protocol checks; stalls, busy rejection, response snapshots, slave errors and reset"
+      ],
+      "tb_stream_job_engine": [
+        "PASS stream job engine: checks=64 queued jobs, ping-pong overlap, ownership, invalid commands, IRQ, reset"
+      ],
+      "tb_stream_learning": [
+        "PASS streaming learning matches iterative controller: 660 transactions, all bin states, counters, freeze, sampling and learning reset"
+      ],
+      "tb_stream_throughput": [
+        "STREAM_THROUGHPUT,4,0,2048,93,2116,2209",
+        "STREAM_THROUGHPUT,4,32,2048,93,2410,2503",
+        "STREAM_THROUGHPUT,4,1,2048,98,10236,10334"
+      ],
+      "tb_systolic_param": [
+        "PASS systolic N=4 checks=480 measured latency=8",
+        "PASS systolic N=8 checks=960 measured latency=16",
+        "PASS systolic N=16 checks=1920 measured latency=32",
+        "PASS parameterized systolic arrays: 4x4, 8x8, and 16x16"
+      ]
+    }
+  },
+  "soc_regression": {
+    "status": "passed",
+    "simulator": "Verilator",
+    "results": [
+      "HOST_BENCH,1,0,138999",
+      "HOST_BENCH,1,1,138999",
+      "HOST_BENCH,1,2,139052",
+      "HOST_BENCH,1,3,139052",
+      "PASS CV32 fused mailbox: four activation modes; counters; invalid shift",
+      "PASS CV32 autonomous model: load/run, unload rejection, compact outputs, counters, reload protection",
+      "STREAM_HOST_BENCH,0,147",
+      "STREAM_E2E_BENCH,4,0,280,314",
+      "STREAM_HOST_BENCH,1,147",
+      "STREAM_E2E_BENCH,4,1,286,320",
+      "STREAM_HOST_BENCH,2,147",
+      "STREAM_E2E_BENCH,4,2,260,294",
+      "STREAM_HOST_BENCH,3,147",
+      "STREAM_E2E_BENCH,4,3,270,304",
+      "PASS CV32 streaming: lanes=4 legacy mailbox regression plus queued streaming jobs in all activation modes"
+    ]
+  },
+  "synthesis": {
+    "status": "passed",
+    "errors": 0,
+    "critical_warnings": 0
+  },
+  "completed_at": "2026-10-25T16:33:06.611008+05:30",
+  "timing": {
+    "setup_slack_ns": 6.274,
+    "hold_slack_ns": 0.019,
+    "setup_failing_endpoints": 0,
+    "hold_failing_endpoints": 0
+  },
+  "utilization": {
+    "Slice LUTs": 43784.0,
+    "Slice Registers": 37381.0,
+    "Block RAM Tile": 33.5,
+    "DSPs": 21.0
+  },
+  "drc": {
+    "errors": 0,
+    "warning_rules": [
+      {
+        "rule": "CHECK-3",
+        "count": 1
+      },
+      {
+        "rule": "DPIP-1",
+        "count": 10
+      },
+      {
+        "rule": "DPOP-1",
+        "count": 20
+      },
+      {
+        "rule": "DPOP-2",
+        "count": 19
+      },
+      {
+        "rule": "REQP-1839",
+        "count": 20
+      },
+      {
+        "rule": "RTSTAT-10",
+        "count": 1
+      }
+    ]
+  },
+  "power": {
+    "estimated_watts": 1.628,
+    "confidence": "Low",
+    "basis": "Vectorless switching activity; not measured board power."
+  },
+  "artifacts": {
+    "board.bit": "9865f8e85cb58c881a111778a9e8972483cca775700192c1dfa0fbb016862799",
+    "board.hwh": "d832bc8cabcfdecc0f2fd6faf5b441949183e3c409711f536b219edc2e063dc5"
+  },
+  "vendor_dma_regression": {
+    "status": "passed",
+    "log": "../dma.log",
+    "result": "PASS vendor AXI CDMA: lanes=4 results=256 DDR/BRAM burst transfers, byte enables, ownership, completion and reset; read bursts=32 write bursts=32"
+  },
+  "validation_completed_at": "2026-10-25T16:38:04.598956+05:30",
+  "source_hash_normalization": "LF line endings"
+}

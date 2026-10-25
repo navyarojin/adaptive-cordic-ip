@@ -3,6 +3,7 @@ preflight lint
 set rtl_sources [source_list]
 file mkdir [file join $out lint]
 clear -all
+if {$cfg(top) eq "chip"} {analyze -sv {*}$cfg(pad_models)}
 analyze -sv {*}$rtl_sources
 elaborate -top $cfg(top)
 clock $cfg(clock)
