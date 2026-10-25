@@ -7,7 +7,6 @@ Fixed-point tanh/sigmoid activation hardware with adaptive iteration control, a 
 - `Phase2_RTL/verification/`, `asic/`, `uvm_tb/`, `spi_tb/`: verification flows.
 - `Phase2_RTL/fpga/`: firmware, build scripts, simulations, and PYNQ notebooks.
 - `Phase2_RTL/evaluation/`: evaluation scripts, model/test data, and saved results.
-- `arch.pptx`: architecture slides.
 
 ## System Architecture
 
