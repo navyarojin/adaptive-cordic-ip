@@ -10,7 +10,7 @@ import json
 import time
 from pathlib import Path
 import numpy as np
-from run_banknote import infer, infer_model
+from run import infer, infer_model
 
 def stats(values):
     a = np.asarray(values, dtype=np.float64)
