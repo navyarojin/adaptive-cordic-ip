@@ -1,0 +1,5 @@
+set board [file normalize [file join [file dirname [info script]] ..]]
+set report_dir [file join $board reports row_gating_20261029]
+set out [file join $board work_row_gating]
+source [file join $board scripts close_engineering.tcl]
+source [file join $board scripts check_engineering.tcl]

@@ -1,0 +1,3 @@
+`verilator_config
+
+lint_off -rule BLKANDNBLK -file "*cv32e40p_cs_registers.sv"
